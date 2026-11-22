@@ -1,0 +1,11 @@
+    @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.ttf") format("truetype"); font-weight: 400; }
+    @font-face { font-family: "MontserratV"; src: url("assets/fonts/Montserrat.ttf") format("truetype"); font-weight: 100 900; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .hl { font-family: "Anton", sans-serif; font-size: 150px; line-height: 1.02; color: #fff; text-transform: uppercase; text-align: center;
+          -webkit-text-stroke: 10px #000; paint-order: stroke fill; text-shadow: 0 8px 24px rgba(0,0,0,.55); letter-spacing: 1px; }
+    .sub { font-family: "Anton", sans-serif; font-size: 70px; line-height: 1.1; color: #fff; text-transform: uppercase; text-align: center;
+           -webkit-text-stroke: 7px #000; paint-order: stroke fill; text-shadow: 0 6px 18px rgba(0,0,0,.5); letter-spacing: 1px; }
+    .y { color: #FFE600; } .g { color: #39FF14; }
+    .lbl { font-family: "MontserratV", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+    .topshade { position: absolute; left: 0; top: 0; width: 1080px; height: 900px; background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,0)); }
+    .line { position: absolute; left: 0; width: 1080px; }
