@@ -13,6 +13,7 @@
     .line { position: absolute; left: 0; width: 1080px; }
     #usp-count { position:absolute; left:0; top:340px; width:1080px; text-align:center; opacity:0; }
     #usp-num { font-family:"Anton",sans-serif; font-size:150px; line-height:1; color:#39FF14; -webkit-text-stroke:10px #000; paint-order: stroke fill; text-shadow:0 8px 24px rgba(0,0,0,.55); }
+    #usp-unit { font-size:70px; color:#fff; }
     #usp-numlbl { display:inline-block; font-size:40px; color:#fff; margin-top:10px; padding:6px 22px; border-radius:30px; background:rgba(0,0,0,.7); }
   </style>
   <div id="root" data-composition-id="usp" data-width="1080" data-height="1920">
@@ -20,7 +21,7 @@
     <div id="usp-a0" class="sub line" style="top:330px">TALI SKIPPING NI ADA</div>
     <div id="usp-a1" class="hl line g" style="top:412px">DIGITAL</div>
     <div id="usp-a2" class="hl line" style="top:565px">COUNTER</div>
-    <div id="usp-count"><div id="usp-num">0</div><div id="usp-numlbl" class="lbl">lompatan dikira</div></div>
+    <div id="usp-count"><div id="usp-num"><span id="usp-n">0</span><span id="usp-unit"> KCAL</span></div><div id="usp-numlbl" class="lbl">kalori terbakar</div></div>
     <div id="usp-b0" class="sub line" style="top:330px; opacity:0">BOLEH SKIPPING</div>
     <div id="usp-b1" class="hl line y" style="top:412px; opacity:0">DALAM</div>
     <div id="usp-b2" class="hl line" style="top:565px; opacity:0">RUMAH JE</div>
@@ -33,10 +34,10 @@
     tl.fromTo("#usp-a2", { opacity: 0, scale: 1.3, x: 30 }, { opacity: 1, scale: 1, x: 0, duration: 0.3, ease: "expo.out" }, 0.22);
     tl.to(["#usp-a0","#usp-a1","#usp-a2"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, 3.28);
     // B: kiraan automatik (3.5 - 6.0)
-    const num = document.querySelector("#usp-num"); const o = { n: 0 };
+    const num = document.querySelector("#usp-n"); const o = { n: 0 };
     tl.fromTo("#usp-count", { opacity: 0, scale: 0.8 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.6)" }, 3.55);
-    tl.fromTo(o, { n: 0 }, { n: 276, duration: 1.2, ease: "power2.out", onUpdate: () => { num.textContent = Math.round(o.n); } }, 3.6);
-    tl.to("#usp-count", { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, 5.78);
+    tl.fromTo(o, { n: 0 }, { n: 176, duration: 0.9, ease: "power2.out", onUpdate: () => { num.textContent = Math.round(o.n); } }, 3.6);
+    tl.to("#usp-count", { opacity: 0, filter: "blur(8px)", duration: 0.18, ease: "power2.in" }, 4.95);
     // C: dalam rumah je (6.0 - 9.5)
     tl.fromTo("#usp-b0", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 6.05);
     tl.fromTo("#usp-b1", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 6.1);

@@ -1,12 +1,12 @@
 clips=[("c1_hook",0,4.0,0.0305),("c2_cal",4,5.0,0.032),("c3_cal",9,5.0,0.1549),("c4_otot",14,4.0,0.0684),
-("c5_otot",18,4.0,0.2786),("c6_counter",22,3.5,1.2735),("c7_count",25.5,2.5,2.0654),("c8_rumah",28,3.5,0.4467),("c9_cta",31.5,5.5,0.0153)]
+("c5_otot",18,4.0,0.2786),("c6_counter",22,3.5,1.4289),("c7_count",25.5,2.5,2.0654),("c8_rumah",28,3.5,0.4467),("c9_cta",31.5,5.5,0.0153)]
 sfx_len={"whoosh":0.55,"pop":0.12,"ding":1.4,"impact":0.9,"chaching":1.2,"riser":1.3,"zap":0.3}
 cuts=[4,9,14,18,22,25.5,28,31.5]
 sfx=[("impact",0.0),("pop",0.55),("riser",2.7)]
 sfx+=[("whoosh",round(c-0.3,2)) for c in cuts]
 sfx+=[("impact",4.05),("pop",5.2),("pop",5.5),("pop",5.8),("pop",6.1),("pop",6.4),("chaching",7.7),("ding",10.6),
 ("impact",14.05),("pop",14.8),("pop",15.3),("pop",15.8),("pop",16.3),("pop",16.8),("pop",17.3),("ding",19.0),
-("zap",22.1),("ding",25.6),("chaching",27.0),("pop",28.1),("zap",28.4),
+("zap",22.1),("ding",25.6),("chaching",26.6),("pop",28.1),("zap",28.4),
 ("riser",30.2),("impact",31.5),("pop",32.0),("ding",33.3),("chaching",34.0)]
 sfx.sort(key=lambda s:s[1])
 # lanes: assign lowest lane with no overlap
@@ -64,5 +64,5 @@ html=f'''<!doctype html>
   </body>
 </html>
 '''
-open("index.html","w").write(html)
+open("/home/user/hf/skipping/index.html","w").write(html)
 print(len(out),"sfx,",len(lanes),"lanes")
