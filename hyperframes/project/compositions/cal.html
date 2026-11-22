@@ -11,8 +11,8 @@
     .lbl { font-family: "MontserratV", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
     .topshade { position: absolute; left: 0; top: 0; width: 1080px; height: 900px; background: linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,0)); }
     .line { position: absolute; left: 0; width: 1080px; }
-    #cal-card { position:absolute; left:120px; top:615px; width:740px; height:500px; border-radius:36px; background: rgba(10,10,10,.72); border: 3px solid rgba(57,255,20,.65); padding: 26px 30px 0; }
-    .row { display:flex; align-items:center; height:76px; }
+    #cal-card { position:absolute; left:120px; top:600px; width:740px; height:482px; border-radius:36px; background: rgba(10,10,10,.72); border: 3px solid rgba(57,255,20,.65); padding: 26px 30px 0; }
+    .row { display:flex; align-items:center; height:66px; }
     .kg { width:130px; font-size:32px; color:#fff; }
     .track { flex:1; height:34px; border-radius:17px; background: rgba(255,255,255,.14); overflow:hidden; margin-right:18px; }
     .bar { width:100%; height:100%; border-radius:17px; background: linear-gradient(90deg,#FFE600,#39FF14); transform-origin: 0 50%; }
@@ -25,11 +25,12 @@
     <div id="cal-t1" class="hl line g" style="top:330px">KALORI</div>
     <div id="cal-t2" class="sub line" style="top:492px">TERBAKAR DALAM <span class="y">10 MINIT</span></div>
     <div id="cal-card">
-      <div id="cal-r1" class="row"><div class="lbl kg">50 KG</div><div class="track"><div id="cal-b1" class="bar" data-pct="0.5538"></div></div><div class="val"><span id="cal-n1" data-v="103">0</span><small class="lbl">kcal</small></div></div>
-      <div id="cal-r2" class="row"><div class="lbl kg">60 KG</div><div class="track"><div id="cal-b2" class="bar" data-pct="0.6667"></div></div><div class="val"><span id="cal-n2" data-v="124">0</span><small class="lbl">kcal</small></div></div>
-      <div id="cal-r3" class="row"><div class="lbl kg">70 KG</div><div class="track"><div id="cal-b3" class="bar" data-pct="0.7796"></div></div><div class="val"><span id="cal-n3" data-v="145">0</span><small class="lbl">kcal</small></div></div>
-      <div id="cal-r4" class="row"><div class="lbl kg">80 KG</div><div class="track"><div id="cal-b4" class="bar" data-pct="0.8871"></div></div><div class="val"><span id="cal-n4" data-v="165">0</span><small class="lbl">kcal</small></div></div>
-      <div id="cal-r5" class="row"><div class="lbl kg">90 KG</div><div class="track"><div id="cal-b5" class="bar" data-pct="1.0"></div></div><div class="val"><span id="cal-n5" data-v="186">0</span><small class="lbl">kcal</small></div></div>
+      <div id="cal-r1" class="row"><div class="lbl kg">50 KG</div><div class="track"><div id="cal-b1" class="bar" data-pct="0.4976"></div></div><div class="val"><span id="cal-n1" data-v="103">0</span><small class="lbl">kcal</small></div></div>
+      <div id="cal-r2" class="row"><div class="lbl kg">60 KG</div><div class="track"><div id="cal-b2" class="bar" data-pct="0.599"></div></div><div class="val"><span id="cal-n2" data-v="124">0</span><small class="lbl">kcal</small></div></div>
+      <div id="cal-r3" class="row"><div class="lbl kg">70 KG</div><div class="track"><div id="cal-b3" class="bar" data-pct="0.7005"></div></div><div class="val"><span id="cal-n3" data-v="145">0</span><small class="lbl">kcal</small></div></div>
+      <div id="cal-r4" class="row"><div class="lbl kg">80 KG</div><div class="track"><div id="cal-b4" class="bar" data-pct="0.7971"></div></div><div class="val"><span id="cal-n4" data-v="165">0</span><small class="lbl">kcal</small></div></div>
+      <div id="cal-r5" class="row"><div class="lbl kg">90 KG</div><div class="track"><div id="cal-b5" class="bar" data-pct="0.8986"></div></div><div class="val"><span id="cal-n5" data-v="186">0</span><small class="lbl">kcal</small></div></div>
+      <div id="cal-r6" class="row"><div class="lbl kg">100 KG</div><div class="track"><div id="cal-b6" class="bar" data-pct="1.0"></div></div><div class="val"><span id="cal-n6" data-v="207">0</span><small class="lbl">kcal</small></div></div>
       <div id="cal-note" class="lbl">*Anggaran, kadar sederhana</div>
     </div>
   </div>
@@ -38,7 +39,7 @@
     tl.fromTo("#cal-t1", { scale: 1.3, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.3, ease: "expo.out" }, 0.05);
     tl.fromTo("#cal-t2", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 0.35);
     tl.fromTo("#cal-card", { opacity: 0, y: 60 }, { opacity: 1, y: 0, duration: 0.5, ease: "expo.out" }, 0.7);
-    for (let i = 1; i <= 5; i++) {
+    for (let i = 1; i <= 6; i++) {
       const t0 = 1.2 + (i - 1) * 0.3;
       const bar = document.querySelector("#cal-b" + i), num = document.querySelector("#cal-n" + i);
       const pct = parseFloat(bar.dataset.pct), v = parseInt(num.dataset.v, 10);
@@ -48,8 +49,8 @@
       tl.fromTo(o, { n: 0 }, { n: v, duration: 1.2, ease: "power2.out", onUpdate: () => { num.textContent = Math.round(o.n); } }, t0 + 0.1);
     }
     // sorotan: lebih berat, lebih banyak kalori
-    tl.fromTo("#cal-r5", { scale: 1 }, { scale: 1.06, duration: 0.3, ease: "back.out(1.6)" }, 6.6);
-    tl.fromTo("#cal-n5", { color: "#ffffff" }, { color: "#39FF14", duration: 0.2 }, 6.6);
+    tl.fromTo("#cal-r6", { scale: 1 }, { scale: 1.06, duration: 0.3, ease: "back.out(1.6)" }, 6.6);
+    tl.fromTo("#cal-n6", { color: "#ffffff" }, { color: "#39FF14", duration: 0.2 }, 6.6);
     tl.to(["#cal-t1","#cal-t2","#cal-card","#cal-shade"], { opacity: 0, filter: "blur(8px)", duration: 0.22, ease: "power2.in" }, 9.72);
     window.__timelines["cal"] = tl;
   </script>

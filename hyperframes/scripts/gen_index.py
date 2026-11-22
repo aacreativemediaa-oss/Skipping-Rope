@@ -4,7 +4,7 @@ sfx_len={"whoosh":0.55,"pop":0.12,"ding":1.4,"impact":0.9,"chaching":1.2,"riser"
 cuts=[4,9,14,18,22,25.5,28,31.5]
 sfx=[("impact",0.0),("pop",0.55),("riser",2.7)]
 sfx+=[("whoosh",round(c-0.3,2)) for c in cuts]
-sfx+=[("impact",4.05),("pop",5.2),("pop",5.5),("pop",5.8),("pop",6.1),("pop",6.4),("chaching",7.7),("ding",10.6),
+sfx+=[("impact",4.05),("pop",5.2),("pop",5.5),("pop",5.8),("pop",6.1),("pop",6.4),("pop",6.7),("chaching",8.05),("ding",10.6),
 ("impact",14.05),("pop",14.8),("pop",15.3),("pop",15.8),("pop",16.3),("pop",16.8),("pop",17.3),("ding",19.0),
 ("zap",22.1),("ding",25.6),("chaching",26.6),("pop",28.1),("zap",28.4),
 ("riser",30.2),("impact",31.5),("pop",32.0),("ding",33.3),("chaching",34.0)]

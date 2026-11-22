@@ -18,7 +18,7 @@ Atas persetujuan, video diedit **tanpa VO**: skrip di bawah dipaparkan sebagai t
 |---|---|---|---|
 | 0.0–4.0 | Hook | 10 MINIT SKIPPING / SETIAP HARI? | Headline 150px + sub 70px (caption disembunyikan) |
 | 1.5–3.85 | Hook | INI YANG JADI · PADA **BADAN** KAU | Caption |
-| 4.0–14.0 | Kalori (10s) | KALORI / TERBAKAR DALAM 10 MINIT + carta 50–90 kg | Grafik (caption disembunyikan) |
+| 4.0–14.0 | Kalori (10s) | KALORI / TERBAKAR DALAM 10 MINIT + carta 50–100 kg | Grafik (caption disembunyikan) |
 | 10.6–13.85 | Kalori | LEBIH **BERAT**, · LEBIH BANYAK **KALORI** | Caption |
 | 14.0–22.0 | Otot | OTOT / YANG DILATIH — Bahu, Punggung, Lengan, Paha, Perut/Core, Betis, + Jantung & Paru-paru | Grafik |
 | 20.0–21.9 | Otot | SEMUA KERJA · **SERENTAK!** | Caption |
@@ -41,6 +41,7 @@ Formula: kcal = MET × 3.5 × berat(kg) ÷ 200 × 10 minit, MET 11.8
 | 70 kg | ~145 kcal |
 | 80 kg | ~165 kcal |
 | 90 kg | ~186 kcal |
+| 100 kg | ~207 kcal |
 
 ## 3. Senarai klip (9 klip, maksimum 10)
 
