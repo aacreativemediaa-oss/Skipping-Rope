@@ -1,6 +1,6 @@
 # 15 Minit Skipping — Transkrip & Senarai Edit
 
-Video: 1080×1920, 60fps, 33.0 saat, 60.3MB, dibina dengan HyperFrames 0.9.80.
+Video: 1080×1920, 60fps, 39.0 saat, 62.3MB, dibina dengan HyperFrames 0.9.80.
 Format: `CLAUDE.md` (saiz teks dikemas kini — headline 100px, sub 47px, caption 40px, chip/label 19px).
 
 ## 1. Transkrip audio asal
@@ -20,9 +20,12 @@ Video diedit tanpa VO; skrip dipaparkan sebagai grafik + caption.
 | 14.0–20.0 | Otot (6s) | OTOT / YANG DILATIH — Bahu, Punggung, Lengan, Paha, Perut/Core, Betis, + Jantung & Paru-paru | Grafik (chip 19px) |
 | 17.6–19.8 | Otot | SEMUA KERJA · **SERENTAK!** | Caption |
 | 20.0–23.5 | USP | TALI SKIPPING NI ADA / DIGITAL COUNTER / KIRA LOMPATAN, KALORI & JARAK | Grafik sahaja (caption disembunyikan supaya skrin counter tak tertutup) |
-| 23.5–27.5 | USP | BOLEH SKIPPING / DALAM RUMAH JE | Grafik (di bawah muka) |
-| 25.0–27.3 | USP | TAK PERLU **GYM**, · **JIMAT** MASA | Caption |
-| 27.5–33.0 | CTA | NAK BADAN FIT 2027? / START SKIPPING / SEKARANG! | Grafik (caption disembunyikan) |
+| 23.5–29.5 | USP | DUAL MODE / MODE 1: BOLA PEMBERAT + chip "SESUAI UNTUK PEMULA" / MODE 2: TALI PANJANG | Grafik |
+| 24.8–26.3 | USP | TAK **TERSANGKUT** KAKI | Caption (mod bola) |
+| 27.6–29.3 | USP | NAK LEBIH **CABARAN?** | Caption (mod tali) |
+| 29.5–33.5 | USP | BOLEH SKIPPING / DALAM RUMAH JE | Grafik (di bawah muka) |
+| 31.0–33.3 | USP | TAK PERLU **GYM**, · **JIMAT** MASA | Caption |
+| 33.5–39.0 | CTA | NAK BADAN FIT 2027? / START SKIPPING / SEKARANG! | Grafik (caption disembunyikan) |
 
 Nota counter: skrin dalam klip ini berada dalam mod **Km/Miles** (0001), jadi teks grafik
 menyebut "lompatan, kalori & jarak" — fungsi yang memang nampak pada counter dalam footage
@@ -40,7 +43,7 @@ kcal = MET × 3.5 × berat(kg) ÷ 200 × 15 minit, MET 11.8 (lompat tali kadar s
 | 90 kg | ~279 kcal |
 | 100 kg | ~310 kcal |
 
-## 3. Senarai klip (8 klip — semua berbeza dari video 10 minit)
+## 3. Senarai klip (10 klip — semua berbeza dari video 10 minit)
 
 | # | Masa | Sumber | Potongan sumber | LUFS asal | Gain → −57 LUFS |
 |---|---|---|---|---|---|
@@ -50,8 +53,10 @@ kcal = MET × 3.5 × berat(kg) ÷ 200 × 15 minit, MET 11.8 (lompat tali kadar s
 | 4 | 14.0–17.0 | IMG_1093.MOV (HLG → SDR) | 2.0–5.0s | −55.3 | −1.7 dB |
 | 5 | 17.0–20.0 | IMG_1161.MOV (HLG → SDR) | 3.0–6.0s | −40.9 | −16.1 dB |
 | 6 | 20.0–23.5 | lv_0_20251026143250.mp4 (counter) | 26.2–29.7s | −49.9 | −7.1 dB |
-| 7 | 23.5–27.5 | IMG_1073.MOV (dalam rumah, HLG → SDR) | 0.5–4.5s | −32.5 | −24.5 dB |
-| 8 | 27.5–33.0 | video_20260419_202951.mp4 | 5.0–10.5s | −33.3 | −23.7 dB |
+| 7 | 23.5–26.5 | IMG_1207.MOV (mod bola pemberat, HLG → SDR) | 2.5–5.5s | −47.5 | −9.5 dB |
+| 8 | 26.5–29.5 | IMG_1100.MOV (mod tali panjang, HLG → SDR) | 1.5–4.5s | −35.7 | −21.3 dB |
+| 9 | 29.5–33.5 | IMG_1073.MOV (dalam rumah, HLG → SDR) | 0.5–4.5s | −32.5 | −24.5 dB |
+| 10 | 33.5–39.0 | video_20260419_202951.mp4 | 5.0–10.5s | −33.3 | −23.7 dB |
 
 Semua dipotong dengan penapis `trim`/`atrim` (frame-tepat) dan disemak: tiada potongan
 dalaman atau frame beku. Tiada klip perlukan lebih daripada +12 dB.

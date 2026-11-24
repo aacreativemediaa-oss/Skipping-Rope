@@ -22,4 +22,6 @@ d5_otot IMG_1161.MOV 3.0 3.0
 d6_counter lv_0_20251026143250.mp4 26.2 3.5
 d7_rumah IMG_1073.MOV 0.5 4.0
 d8_cta video_20260419_202951.mp4 5.0 5.5
+d9_bola IMG_1207.MOV 2.5 3.0
+d10_tali IMG_1100.MOV 1.5 3.0
 LIST

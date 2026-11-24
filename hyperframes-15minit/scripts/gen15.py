@@ -116,12 +116,29 @@ f'''    tl.fromTo("#usp-a0", {IN_BLUR}, 0.05);
     tl.fromTo("#usp-a1", {{ opacity: 0, scale: 1.3, x: -24 }}, {{ opacity: 1, scale: 1, x: 0, duration: 0.3, ease: "expo.out" }}, 0.1);
     tl.fromTo("#usp-a2", {{ opacity: 0, scale: 1.3, x: 24 }}, {{ opacity: 1, scale: 1, x: 0, duration: 0.3, ease: "expo.out" }}, 0.22);
     tl.fromTo("#usp-a3", {{ opacity: 0, y: 16, filter: "blur(8px)" }}, {{ opacity: 1, y: 0, filter: "blur(0px)", duration: 0.25, ease: "power4.out" }}, 1.2);
-'''+out('["#usp-a0","#usp-a1","#usp-a2","#usp-a3"]',3.28)+f'''
-    tl.fromTo("#usp-bshade", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.3 }}, 3.5);
-    tl.fromTo("#usp-b0", {IN_BLUR}, 3.55);
-    tl.fromTo("#usp-b1", {{ opacity: 0, scale: 1.3 }}, {{ opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }}, 3.6);
-    tl.fromTo("#usp-b2", {{ opacity: 0, scale: 1.3 }}, {{ opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }}, 3.72);
-'''+out('["#usp-b0","#usp-b1","#usp-b2","#usp-shade","#usp-bshade"]',7.28))
+'''+out('["#usp-a0","#usp-a1","#usp-a2","#usp-a3","#usp-shade"]',3.28)+f'''
+    tl.fromTo("#usp-bshade", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.3 }}, 9.5);
+    tl.fromTo("#usp-b0", {IN_BLUR}, 9.55);
+    tl.fromTo("#usp-b1", {{ opacity: 0, scale: 1.3 }}, {{ opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }}, 9.6);
+    tl.fromTo("#usp-b2", {{ opacity: 0, scale: 1.3 }}, {{ opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }}, 9.72);
+'''+out('["#usp-b0","#usp-b1","#usp-b2","#usp-bshade"]',13.28))
+# ---------- DUAL MODE (23.5-29.5) ----------
+W['dual']=scene('dual',f'''
+    .chip {{ position:absolute; left:0; right:0; margin:0 auto; width:max-content; height:46px; padding:0 18px; border-radius:23px; background: rgba(10,10,10,.75);
+            border:2px solid #FFE600; display:flex; align-items:center; gap:9px; font-size:{CHIP}px; color:#fff; white-space:nowrap; }}
+    .chip i {{ width:11px; height:11px; border-radius:50%; background:#FFE600; box-shadow:0 0 10px #FFE600; display:block; }}''',
+'''    <div class="topshade" id="dual-shade"></div>
+    <div id="dual-t1" class="hl line" style="top:330px">DUAL <span class="g">MODE</span></div>
+    <div id="dual-m1" class="sub line" style="top:444px">MODE 1: <span class="y">BOLA PEMBERAT</span></div>
+    <div id="dual-c1" class="chip lbl" style="top:512px"><i></i>SESUAI UNTUK PEMULA</div>
+    <div id="dual-m2" class="sub line" style="top:444px; opacity:0">MODE 2: <span class="y">TALI PANJANG</span></div>''',
+f'''    tl.fromTo("#dual-shade", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.3 }}, 0);
+    tl.fromTo("#dual-t1", {IN_SLAM}, 0.05);
+    tl.fromTo("#dual-m1", {{ opacity: 0, y: 16, filter: "blur(8px)" }}, {{ opacity: 1, y: 0, filter: "blur(0px)", duration: 0.25, ease: "power4.out" }}, 0.4);
+    tl.fromTo("#dual-c1", {{ opacity: 0, scale: 0.6 }}, {{ opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }}, 0.9);
+'''+out('["#dual-m1","#dual-c1"]',2.8)+f'''
+    tl.fromTo("#dual-m2", {{ opacity: 0, y: 16, filter: "blur(8px)" }}, {{ opacity: 1, y: 0, filter: "blur(0px)", duration: 0.25, ease: "power4.out" }}, 3.1);
+'''+out('["#dual-t1","#dual-m2","#dual-shade"]',5.78))
 # ---------- CTA (27.5-33) ----------
 W['cta']=scene('cta','''
     #cta-shade { position:absolute; inset:0; background: rgba(0,0,0,.36); }
@@ -141,7 +158,8 @@ f'''    tl.fromTo("#cta-shade", {{ opacity: 0 }}, {{ opacity: 1, duration: 0.4, 
 groups=[(1.5,2.6,"INI YANG JADI",[]),(2.6,3.85,"PADA BADAN KAU",["BADAN"]),
 (10.6,12.2,"LEBIH BERAT,",["BERAT,"]),(12.2,13.85,"LEBIH BANYAK KALORI",["KALORI"]),
 (17.6,18.7,"SEMUA KERJA",[]),(18.7,19.8,"SERENTAK!",["SERENTAK!"]),
-(25.0,26.15,"TAK PERLU GYM,",["GYM,"]),(26.15,27.3,"JIMAT MASA",["JIMAT"])]
+(24.8,26.3,"TAK TERSANGKUT KAKI",["TERSANGKUT"]),(27.6,29.3,"NAK LEBIH CABARAN?",["CABARAN?"]),
+(31.0,32.15,"TAK PERLU GYM,",["GYM,"]),(32.15,33.3,"JIMAT MASA",["JIMAT"])]
 html=[];js=[]
 for gi,(s,e,txt,kw) in enumerate(groups,1):
     words=txt.split(); n=len(words)
@@ -163,15 +181,15 @@ W['captions']=scene('captions',f'''
     .w.kw {{ color:#39FF14; }}''', "\n".join(html), "\n".join(js))
 for k,v in W.items(): open(f'{P}/compositions/{k}.html','w').write(v)
 # ---------- INDEX ----------
-L={'d1_hook':-36.7,'d2_cal':-41.5,'d3_cal':-32.8,'d4_otot':-55.3,'d5_otot':-40.9,'d6_counter':-49.9,'d7_rumah':-32.5,'d8_cta':-33.3}
-clips=[("d1_hook",0,4.0),("d2_cal",4,5.0),("d3_cal",9,5.0),("d4_otot",14,3.0),("d5_otot",17,3.0),("d6_counter",20,3.5),("d7_rumah",23.5,4.0),("d8_cta",27.5,5.5)]
-DUR=33.0
+L={'d1_hook':-36.7,'d2_cal':-41.5,'d3_cal':-32.8,'d4_otot':-55.3,'d5_otot':-40.9,'d6_counter':-49.9,'d7_rumah':-32.5,'d8_cta':-33.3,'d9_bola':-47.5,'d10_tali':-35.7}
+clips=[("d1_hook",0,4.0),("d2_cal",4,5.0),("d3_cal",9,5.0),("d4_otot",14,3.0),("d5_otot",17,3.0),("d6_counter",20,3.5),("d9_bola",23.5,3.0),("d10_tali",26.5,3.0),("d7_rumah",29.5,4.0),("d8_cta",33.5,5.5)]
+DUR=39.0
 cuts=[s for _,s,_ in clips[1:]]
 sfx_len={"whoosh":0.55,"pop":0.12,"ding":1.4,"impact":0.9,"chaching":1.2,"riser":1.3,"zap":0.3}
 sfx=[("impact",0.0),("pop",0.55),("riser",2.7)]+[("whoosh",round(c-0.3,2)) for c in cuts]
 sfx+=[("impact",4.05)]+[("pop",round(5.2+0.3*i,2)) for i in range(6)]+[("chaching",8.05),("ding",10.6)]
 sfx+=[("impact",14.05)]+[("pop",round(14.5+0.3*i,2)) for i in range(6)]+[("ding",16.6)]
-sfx+=[("zap",20.1),("pop",21.2),("pop",23.6),("riser",26.2),("impact",27.5),("pop",28.0),("ding",29.3),("chaching",30.0)]
+sfx+=[("zap",20.1),("pop",21.2),("impact",23.55),("pop",23.9),("ding",24.4),("zap",26.55),("pop",26.6),("pop",29.6),("riser",32.2),("impact",33.5),("pop",34.0),("ding",35.3),("chaching",36.0)]
 sfx.sort(key=lambda s:s[1]); lanes=[]; au=[]
 for i,(n,t) in enumerate(sfx):
     e=t+sfx_len[n]
@@ -185,7 +203,7 @@ for i,(n,s,d) in enumerate(clips):
     vids.append(f'''      <div id="w{i+1}" class="wrap" style="z-index:{i+1}">
         <video id="v{i+1}" class="clip" src="assets/media/{n}.mp4" data-start="{s}" data-duration="{d}" data-media-start="0" data-volume="{v}" data-has-audio="true" playsinline data-track-index="0"></video>
       </div>''')
-scenes=[("hook",0,4),("cal",4,10),("otot",14,6),("usp",20,7.5),("cta",27.5,5.5)]
+scenes=[("hook",0,4),("cal",4,10),("otot",14,6),("usp",20,13.5),("dual",23.5,6),("cta",33.5,5.5)]
 sc=[f'      <div id="{n}" data-composition-id="{n}" data-composition-src="compositions/{n}.html" data-start="{s}" data-duration="{d}" data-width="1080" data-height="1920" data-track-index="1" data-track-kind="graphics" style="z-index:20"></div>' for n,s,d in scenes]
 zoom="\n".join(f'      tl.fromTo("#w{i+1}", {{ scale: 1 }}, {{ scale: 1.08, duration: 0.7, ease: "expo.out" }}, {s});' for i,(n,s,d) in enumerate(clips))
 flash="\n".join(f'      tl.fromTo("#flash", {{ opacity: 0.85 }}, {{ opacity: 0, duration: 0.24, ease: "power2.out" }}, {c});' for c in cuts)

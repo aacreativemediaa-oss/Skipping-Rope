@@ -26,8 +26,10 @@
     <div id="cap4" class="clip cg" data-start="12.2" data-duration="1.65" data-track-index="0"><div id="cap4i" class="ci"><span id="cap4w1" class="w">LEBIH</span> <span id="cap4w2" class="w">BANYAK</span> <span id="cap4w3" class="w kw">KALORI</span></div></div>
     <div id="cap5" class="clip cg" data-start="17.6" data-duration="1.1" data-track-index="0"><div id="cap5i" class="ci"><span id="cap5w1" class="w">SEMUA</span> <span id="cap5w2" class="w">KERJA</span></div></div>
     <div id="cap6" class="clip cg" data-start="18.7" data-duration="1.1" data-track-index="0"><div id="cap6i" class="ci"><span id="cap6w1" class="w kw">SERENTAK!</span></div></div>
-    <div id="cap7" class="clip cg" data-start="25.0" data-duration="1.15" data-track-index="0"><div id="cap7i" class="ci"><span id="cap7w1" class="w">TAK</span> <span id="cap7w2" class="w">PERLU</span> <span id="cap7w3" class="w kw">GYM,</span></div></div>
-    <div id="cap8" class="clip cg" data-start="26.15" data-duration="1.15" data-track-index="0"><div id="cap8i" class="ci"><span id="cap8w1" class="w kw">JIMAT</span> <span id="cap8w2" class="w">MASA</span></div></div>
+    <div id="cap7" class="clip cg" data-start="24.8" data-duration="1.5" data-track-index="0"><div id="cap7i" class="ci"><span id="cap7w1" class="w">TAK</span> <span id="cap7w2" class="w kw">TERSANGKUT</span> <span id="cap7w3" class="w">KAKI</span></div></div>
+    <div id="cap8" class="clip cg" data-start="27.6" data-duration="1.7" data-track-index="0"><div id="cap8i" class="ci"><span id="cap8w1" class="w">NAK</span> <span id="cap8w2" class="w">LEBIH</span> <span id="cap8w3" class="w kw">CABARAN?</span></div></div>
+    <div id="cap9" class="clip cg" data-start="31.0" data-duration="1.15" data-track-index="0"><div id="cap9i" class="ci"><span id="cap9w1" class="w">TAK</span> <span id="cap9w2" class="w">PERLU</span> <span id="cap9w3" class="w kw">GYM,</span></div></div>
+    <div id="cap10" class="clip cg" data-start="32.15" data-duration="1.15" data-track-index="0"><div id="cap10i" class="ci"><span id="cap10w1" class="w kw">JIMAT</span> <span id="cap10w2" class="w">MASA</span></div></div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });
@@ -65,18 +67,32 @@
     tl.fromTo("#cap6i", { scale: 0.82, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.16, ease: "back.out(2)" }, 18.7);
     tl.set("#cap6w1", { color: "#39FF14", scale: 1.12 }, 18.7);
     tl.to("#cap6i", { opacity: 0, duration: 0.1, ease: "power2.in" }, 19.7);
-    tl.fromTo("#cap7i", { scale: 0.82, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.16, ease: "back.out(2)" }, 25.0);
-    tl.set("#cap7w1", { color: "#FFE600", scale: 1.12 }, 25.0);
-    tl.set("#cap7w1", { color: "#ffffff", scale: 1 }, 25.286);
-    tl.set("#cap7w2", { color: "#FFE600", scale: 1.12 }, 25.286);
-    tl.set("#cap7w2", { color: "#ffffff", scale: 1 }, 25.687);
-    tl.set("#cap7w3", { color: "#39FF14", scale: 1.12 }, 25.687);
-    tl.to("#cap7i", { opacity: 0, duration: 0.1, ease: "power2.in" }, 26.05);
-    tl.fromTo("#cap8i", { scale: 0.82, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.16, ease: "back.out(2)" }, 26.15);
-    tl.set("#cap8w1", { color: "#39FF14", scale: 1.12 }, 26.15);
-    tl.set("#cap8w1", { color: "#39FF14", scale: 1 }, 26.705);
-    tl.set("#cap8w2", { color: "#FFE600", scale: 1.12 }, 26.705);
-    tl.to("#cap8i", { opacity: 0, duration: 0.1, ease: "power2.in" }, 27.2);
+    tl.fromTo("#cap7i", { scale: 0.82, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.16, ease: "back.out(2)" }, 24.8);
+    tl.set("#cap7w1", { color: "#FFE600", scale: 1.12 }, 24.8);
+    tl.set("#cap7w1", { color: "#ffffff", scale: 1 }, 25.1);
+    tl.set("#cap7w2", { color: "#39FF14", scale: 1.12 }, 25.1);
+    tl.set("#cap7w2", { color: "#39FF14", scale: 1 }, 25.82);
+    tl.set("#cap7w3", { color: "#FFE600", scale: 1.12 }, 25.82);
+    tl.to("#cap7i", { opacity: 0, duration: 0.1, ease: "power2.in" }, 26.2);
+    tl.fromTo("#cap8i", { scale: 0.82, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.16, ease: "back.out(2)" }, 27.6);
+    tl.set("#cap8w1", { color: "#FFE600", scale: 1.12 }, 27.6);
+    tl.set("#cap8w1", { color: "#ffffff", scale: 1 }, 27.959);
+    tl.set("#cap8w2", { color: "#FFE600", scale: 1.12 }, 27.959);
+    tl.set("#cap8w2", { color: "#ffffff", scale: 1 }, 28.462);
+    tl.set("#cap8w3", { color: "#39FF14", scale: 1.12 }, 28.462);
+    tl.to("#cap8i", { opacity: 0, duration: 0.1, ease: "power2.in" }, 29.2);
+    tl.fromTo("#cap9i", { scale: 0.82, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.16, ease: "back.out(2)" }, 31.0);
+    tl.set("#cap9w1", { color: "#FFE600", scale: 1.12 }, 31.0);
+    tl.set("#cap9w1", { color: "#ffffff", scale: 1 }, 31.286);
+    tl.set("#cap9w2", { color: "#FFE600", scale: 1.12 }, 31.286);
+    tl.set("#cap9w2", { color: "#ffffff", scale: 1 }, 31.687);
+    tl.set("#cap9w3", { color: "#39FF14", scale: 1.12 }, 31.687);
+    tl.to("#cap9i", { opacity: 0, duration: 0.1, ease: "power2.in" }, 32.05);
+    tl.fromTo("#cap10i", { scale: 0.82, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.16, ease: "back.out(2)" }, 32.15);
+    tl.set("#cap10w1", { color: "#39FF14", scale: 1.12 }, 32.15);
+    tl.set("#cap10w1", { color: "#39FF14", scale: 1 }, 32.705);
+    tl.set("#cap10w2", { color: "#FFE600", scale: 1.12 }, 32.705);
+    tl.to("#cap10i", { opacity: 0, duration: 0.1, ease: "power2.in" }, 33.2);
     window.__timelines["captions"] = tl;
   </script>
 </template>
