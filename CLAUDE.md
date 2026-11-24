@@ -15,6 +15,7 @@ Rujukan projek terdahulu: `hyperframes/project/` (10 Minit Skipping) dan `hyperf
 - Setiap klip ada zoom masuk ringkas + kilatan putih pada potongan.
 - Babak fitur guna footage sebenar.
 - Potong klip dengan penapis `trim`/`atrim` (seek frame-tepat), bukan `-ss` sebelum `-i`: sesetengah fail sumber dah ada potongan dalaman.
+- Footage iPhone HDR (HLG/Dolby Vision, `color_transfer` bermula `arib-std-b67`) mesti ditukar ke SDR bt709 (zscale + tonemap). Semak warna klip yang disediakan berbanding sumber sebelum render — kalau pucat/kelabu, penukaran tak berlaku.
 
 ## Teks & caption
 Font Anton untuk tajuk/caption, Montserrat untuk label.
