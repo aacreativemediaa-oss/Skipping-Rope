@@ -1,0 +1,36 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.ttf") format("truetype"); font-weight: 400; }
+    @font-face { font-family: "MontserratV"; src: url("assets/fonts/Montserrat.ttf") format("truetype"); font-weight: 100 900; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .hl { font-family: "Anton", sans-serif; font-size: 100px; line-height: 1.04; color: #fff; text-transform: uppercase; text-align: center;
+          -webkit-text-stroke: 7px #000; paint-order: stroke fill; text-shadow: 0 6px 18px rgba(0,0,0,.55); letter-spacing: 1px; }
+    .sub { font-family: "Anton", sans-serif; font-size: 47px; line-height: 1.15; color: #fff; text-transform: uppercase; text-align: center;
+           -webkit-text-stroke: 5px #000; paint-order: stroke fill; text-shadow: 0 4px 12px rgba(0,0,0,.5); letter-spacing: 1px; }
+    .y { color: #FFE600; } .g { color: #39FF14; }
+    .lbl { font-family: "MontserratV", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+    .topshade { position: absolute; left: 0; top: 0; width: 1080px; height: 760px; background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0)); }
+    .line { position: absolute; left: 0; width: 1080px; }
+    .left { left: 130px; width: 520px; text-align: left; }
+
+    #cta-shade { position:absolute; inset:0; background: rgba(0,0,0,.36); }
+    #cta-btn { position:absolute; left:0; right:0; margin:0 auto; top:812px; width:max-content; padding: 6px 40px 10px; border-radius:60px;
+               background:#39FF14; font-family:"Anton",sans-serif; font-size:73px; line-height:1.1; color:#000; box-shadow: 0 0 30px rgba(57,255,20,.6), 0 8px 24px rgba(0,0,0,.5); }
+  </style>
+  <div id="root" data-composition-id="cta" data-width="1080" data-height="1920">
+    <div id="cta-shade"></div>
+    <div id="cta-a" class="sub line" style="top:560px">NAK BADAN</div>
+    <div id="cta-b" class="hl line" style="top:614px">FIT <span class="y">2027?</span></div>
+    <div id="cta-c" class="sub line" style="top:738px">START SKIPPING</div>
+    <div id="cta-btn">SEKARANG!</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#cta-shade", { opacity: 0 }, { opacity: 1, duration: 0.4, ease: "power2.inOut" }, 0);
+    tl.fromTo("#cta-a", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 0.05);
+    tl.fromTo("#cta-b", { opacity: 0, scale: 1.35 }, { opacity: 1, scale: 1, duration: 0.32, ease: "expo.out" }, 0.1);
+    tl.fromTo("#cta-c", { opacity: 0, y: 20, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.3, ease: "power4.out" }, 1.8);
+    tl.fromTo("#cta-btn", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.45, ease: "back.out(1.8)" }, 2.5);
+    window.__timelines["cta"] = tl;
+  </script>
+</template>

@@ -1,0 +1,43 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.ttf") format("truetype"); font-weight: 400; }
+    @font-face { font-family: "MontserratV"; src: url("assets/fonts/Montserrat.ttf") format("truetype"); font-weight: 100 900; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .hl { font-family: "Anton", sans-serif; font-size: 100px; line-height: 1.04; color: #fff; text-transform: uppercase; text-align: center;
+          -webkit-text-stroke: 7px #000; paint-order: stroke fill; text-shadow: 0 6px 18px rgba(0,0,0,.55); letter-spacing: 1px; }
+    .sub { font-family: "Anton", sans-serif; font-size: 47px; line-height: 1.15; color: #fff; text-transform: uppercase; text-align: center;
+           -webkit-text-stroke: 5px #000; paint-order: stroke fill; text-shadow: 0 4px 12px rgba(0,0,0,.5); letter-spacing: 1px; }
+    .y { color: #FFE600; } .g { color: #39FF14; }
+    .lbl { font-family: "MontserratV", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+    .topshade { position: absolute; left: 0; top: 0; width: 1080px; height: 760px; background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0)); }
+    .line { position: absolute; left: 0; width: 1080px; }
+    .left { left: 130px; width: 520px; text-align: left; }
+
+    .pill { position:absolute; height:52px; padding: 0 18px; border-radius:26px; background: rgba(10,10,10,.72); border:2px solid #39FF14;
+            display:flex; align-items:center; gap:9px; font-size:19px; color:#fff; white-space:nowrap; }
+    .pill i { width:11px; height:11px; border-radius:50%; background:#39FF14; box-shadow: 0 0 10px #39FF14; display:block; }
+    .pill.yb { border-color:#FFE600; } .pill.yb i { background:#FFE600; box-shadow:0 0 10px #FFE600; }
+    .L { left:150px; } .R { right:210px; }
+    .C { left:0; right:0; margin:0 auto; width:max-content; }
+  </style>
+  <div id="root" data-composition-id="dual" data-width="1080" data-height="1920">
+    <div class="topshade" id="dual-shade"></div>
+    <div id="dual-t1" class="hl line" style="top:330px">DUAL <span class="g">MODE</span></div>
+    <div id="dual-s0" class="sub line" style="top:444px">BOLA PEMBERAT <span class="y">+</span> TALI PANJANG</div>
+    <div id="dual-m1" class="sub line" style="top:444px; opacity:0">MODE 1: <span class="y">BOLA PEMBERAT</span></div>
+    <div id="dual-c1" class="pill lbl yb C" style="top:512px; opacity:0"><i></i>SESUAI UNTUK PEMULA</div>
+    <div id="dual-m2" class="sub line" style="top:444px; opacity:0">MODE 2: <span class="y">TALI PANJANG</span></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#dual-t1", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 0.05);
+    tl.fromTo("#dual-s0", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 0.4);
+    tl.to(["#dual-s0"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, 2.8);
+    tl.fromTo("#dual-m1", { opacity: 0, y: 16, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.25, ease: "power4.out" }, 3.1);
+    tl.fromTo("#dual-c1", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 3.5);
+    tl.to(["#dual-m1","#dual-c1"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, 5.8);
+    tl.fromTo("#dual-m2", { opacity: 0, y: 16, filter: "blur(8px)" }, { opacity: 1, y: 0, filter: "blur(0px)", duration: 0.25, ease: "power4.out" }, 6.1);
+    tl.to(["#dual-t1","#dual-m2","#dual-shade"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, 8.78);
+    window.__timelines["dual"] = tl;
+  </script>
+</template>
