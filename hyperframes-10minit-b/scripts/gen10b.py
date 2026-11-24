@@ -47,23 +47,23 @@ data=[(w, int(11.8*3.5*w/200*10+0.5)) for w in (50,60,70,80,90,100)]
 mx=max(k for _,k in data)
 rows="".join(f'\n      <div id="cal-r{i}" class="row"><div class="lbl kg">{w} KG</div><div class="track"><div id="cal-b{i}" class="bar" data-pct="{round(k/mx,4)}"></div></div><div class="val"><span id="cal-n{i}" data-v="{k}">{k}</span><small class="lbl">kcal</small></div></div>' for i,(w,k) in enumerate(data,1))
 W['cal']=scene('cal',f'''
-    #cal-card {{ position:absolute; left:240px; top:514px; width:540px; height:392px; border-radius:26px; background: rgba(10,10,10,.74); border: 2px solid rgba(57,255,20,.65); padding: 20px 24px 0; }}
-    .row {{ display:flex; align-items:center; height:52px; }}
-    .kg {{ width:84px; font-size:{CHIP}px; color:#fff; }}
-    .track {{ flex:1; height:22px; border-radius:11px; background: rgba(255,255,255,.14); overflow:hidden; margin-right:14px; }}
-    .bar {{ width:100%; height:100%; border-radius:11px; background: linear-gradient(90deg,#FFE600,#39FF14); transform-origin: 0 50%; }}
-    .val {{ width:128px; text-align:right; font-family:"Anton",sans-serif; font-size:{SUB}px; color:#fff; line-height:1; }}
-    .val small {{ font-size:{CHIP}px; margin-left:5px; color:#ddd; }}
-    #cal-note {{ font-size:{CHIP}px; font-weight:600; color:#bbb; text-transform:none; letter-spacing:0; margin-top:8px; text-align:center; }}''',
+    #cal-card {{ position:absolute; left:40px; top:310px; width:1000px; height:760px; border-radius:34px; background: rgba(10,10,10,.76); border: 6px solid #000; padding: 16px 40px 0; }}
+    #cal-head {{ font-family:"Anton",sans-serif; font-size:{SUB}px; line-height:62px; height:62px; color:#fff; text-align:center; text-transform:uppercase; letter-spacing:1px; }}
+    .row {{ display:flex; align-items:center; height:104px; }}
+    .kg {{ width:230px; font-size:50px; color:#fff; white-space:nowrap; }}
+    .track {{ flex:1; height:40px; border-radius:20px; background: rgba(255,255,255,.14); overflow:hidden; margin-right:24px; }}
+    .bar {{ width:100%; height:100%; border-radius:20px; background: linear-gradient(90deg,#FFE600,#39FF14); transform-origin: 0 50%; }}
+    .val {{ width:210px; text-align:right; font-family:"Anton",sans-serif; font-size:64px; color:#fff; line-height:1; white-space:nowrap; }}
+    .val small {{ font-size:30px; margin-left:6px; color:#ddd; }}
+    #cal-note {{ font-size:{CHIP}px; font-weight:600; color:#bbb; text-transform:none; letter-spacing:0; margin-top:4px; text-align:center; }}''',
 f'''    <div class="topshade" id="cal-shade"></div>
-    <div id="cal-t1" class="hl line" style="top:330px"><span class="y">10 MINIT</span> SKIPPING</div>
-    <div id="cal-t2" class="sub line" style="top:440px">= <span class="g">KALORI</span> TERBAKAR</div>
-    <div id="cal-card">{rows}
+    <div id="cal-t1" class="hl line" style="top:196px"><span class="y">10 MINIT</span> SKIPPING</div>
+    <div id="cal-card">
+      <div id="cal-head"><span class="g">KALORI</span> TERBAKAR</div>{rows}
       <div id="cal-note" class="lbl">*Anggaran, kadar sederhana</div>
     </div>''',
 f'''    // frame 0 sudah ada tajuk + kad (hook); bar dan nombor naik serentak supaya susunan sentiasa betul
     tl.fromTo("#cal-t1", {{ scale: 1.12, opacity: 1 }}, {{ scale: 1, duration: 0.32, ease: "expo.out" }}, 0);
-    tl.fromTo("#cal-t2", {{ opacity: 1, y: 10 }}, {{ opacity: 1, y: 0, duration: 0.3, ease: "power4.out" }}, 0);
     tl.fromTo("#cal-card", {{ opacity: 1, y: 24 }}, {{ opacity: 1, y: 0, duration: 0.4, ease: "expo.out" }}, 0);
     for (let i = 1; i <= 6; i++) {{
       const bar = document.querySelector("#cal-b" + i), num = document.querySelector("#cal-n" + i);
@@ -72,9 +72,9 @@ f'''    // frame 0 sudah ada tajuk + kad (hook); bar dan nombor naik serentak su
       const o = {{ n: 0 }};
       tl.fromTo(o, {{ n: v * 0.6 }}, {{ n: v, duration: 1.6, ease: "power2.out", onUpdate: () => {{ num.textContent = Math.round(o.n); }} }}, 0);
     }}
-    tl.fromTo("#cal-r6", {{ scale: 1 }}, {{ scale: 1.06, duration: 0.3, ease: "back.out(1.6)" }}, 7.6);
+    tl.fromTo("#cal-r6", {{ scale: 1 }}, {{ scale: 1.04, duration: 0.3, ease: "back.out(1.6)" }}, 7.6);
     tl.fromTo("#cal-n6", {{ color: "#ffffff" }}, {{ color: "#39FF14", duration: 0.2 }}, 7.6);
-'''+out('["#cal-t1","#cal-t2","#cal-card","#cal-shade"]',9.78))
+'''+out('["#cal-t1","#cal-card","#cal-shade"]',9.78))
 # ---------- OTOT (10-16) ----------
 pills=[("BAHU","L",700),("PUNGGUNG","R",700),("LENGAN","L",776),("PAHA","R",776),("PERUT / CORE","L",852),("BETIS","R",852)]
 pb="\n".join(f'    <div id="otot-p{i}" class="pill lbl {s}" style="top:{y}px"><i></i>{n}</div>' for i,(n,s,y) in enumerate(pills,1))

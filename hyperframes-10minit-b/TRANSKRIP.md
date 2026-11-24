@@ -1,6 +1,6 @@
 # 10 Minit Skipping (versi B) — Transkrip & Senarai Edit
 
-Video: 1080×1920, 60fps, 39.0 saat, 62.5MB, HyperFrames 0.9.80. Format: `CLAUDE.md` (headline 100px, sub 47px, caption 40px, chip 19px).
+Video: 1080×1920, 60fps, 39.0 saat, 63.5MB, HyperFrames 0.9.80. Format: `CLAUDE.md` (headline 100px, sub 47px, caption 40px, chip 19px).
 
 ## 1. Transkrip audio asal
 Tiada fail baru dalam Drive. Semua 47 fail telah ditranskrip sebelum ini: **tiada voiceover** — hanya bunyi latar.
@@ -9,7 +9,7 @@ Skrip dipaparkan sebagai grafik + caption.
 ## 2. Skrip atas skrin
 | Masa | Babak | Teks | Dipaparkan sebagai |
 |---|---|---|---|
-| 0.0–10.0 | Hook + Kalori (10s) | 10 MINIT SKIPPING / = KALORI TERBAKAR + carta 50–100 kg (frame 0 dah tunjuk carta) | Grafik |
+| 0.0–10.0 | Hook + Kalori (10s) | 10 MINIT SKIPPING / KALORI TERBAKAR (dalam panel) + carta 50–100 kg (frame 0 dah tunjuk carta) | Grafik |
 | 6.0–9.6 | Kalori | LEBIH **BERAT**, · LEBIH BANYAK **KALORI** | Caption |
 | 10.0–16.0 | Otot | OTOT / YANG DILATIH — Bahu, Punggung, Lengan, Paha, Perut/Core, Betis | Grafik |
 | 13.4–15.7 | Otot | SEMUA KERJA · **SERENTAK!** | Caption |
@@ -29,6 +29,10 @@ Counter dalam klip 9 bertukar mod Km → Cals → kiraan → Min, jadi chip meny
 ### Kalori (10 minit, MET 11.8)
 50 kg ~103 · 60 kg ~124 · 70 kg ~145 · 80 kg ~165 · 90 kg ~186 · 100 kg ~207 kcal.
 Semua bar & nombor naik serentak (60% → 100%), jadi susunan sentiasa betul pada mana-mana frame.
+
+Ukuran kotak kalori (dikemas kini): panel hitam lebar 1000px × tinggi 760px (y 310 → 1070), bucu radius 34px, garis hitam 6px;
+setiap baris tinggi 104px; label berat 50px (Montserrat ExtraBold); nombor kalori 64px (Anton); "kcal" 30px; bar tinggi 40px;
+tajuk dalam panel "KALORI TERBAKAR" 47px; headline "10 MINIT SKIPPING" 100px di atas panel (y 196).
 
 ## 3. Senarai klip (10 klip — footage/segmen belum pernah digunakan)
 | # | Masa | Sumber | Potongan | LUFS asal | Gain |
