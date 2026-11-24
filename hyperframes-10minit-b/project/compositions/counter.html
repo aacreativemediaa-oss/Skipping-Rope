@@ -13,22 +13,20 @@
     .line { position: absolute; left: 0; width: 1080px; }
     .left { left: 130px; width: 520px; text-align: left; }
 
-    .pill { position:absolute; height:52px; padding: 0 18px; border-radius:26px; background: rgba(10,10,10,.72); border:2px solid #39FF14;
-            display:flex; align-items:center; gap:9px; font-size:19px; color:#fff; white-space:nowrap; }
-    .pill i { width:11px; height:11px; border-radius:50%; background:#39FF14; box-shadow: 0 0 10px #39FF14; display:block; }
-    .pill.yb { border-color:#FFE600; } .pill.yb i { background:#FFE600; box-shadow:0 0 10px #FFE600; }
-    .L { left:150px; } .R { right:210px; }
-    .C { left:0; right:0; margin:0 auto; width:max-content; }
+    .chiprow { position:absolute; left:0; width:1080px; display:flex; justify-content:center; gap:20px; }
+    .pill { height:80px; padding: 0 30px 0 20px; border-radius:40px; background:#C8FF1E; border:none;
+            display:flex; align-items:center; gap:12px; font-size:40px; color:#000; white-space:nowrap; box-shadow: 0 6px 18px rgba(0,0,0,.45); }
+    .pill.yb { background:#FFD60A; } .pill.pk { background:#FF3C8E; color:#fff; }
+    .pill i { width:38px; height:38px; border-radius:50%; background:#000; display:flex; align-items:center; justify-content:center; flex:none; }
+    .pill i svg { width:22px; height:22px; }
   </style>
   <div id="root" data-composition-id="counter" data-width="1080" data-height="1920">
     <div class="topshade" id="ctr-shade"></div>
-    <div id="ctr-t0" class="sub line" style="top:330px">TALI SKIPPING NI ADA</div>
-    <div id="ctr-t1" class="hl line g" style="top:388px">DIGITAL</div>
-    <div id="ctr-t2" class="hl line" style="top:492px">COUNTER</div>
-    <div id="ctr-p1" class="pill lbl L" style="top:600px"><i></i>KIRAAN</div>
-    <div id="ctr-p2" class="pill lbl R" style="top:600px"><i></i>KALORI</div>
-    <div id="ctr-p3" class="pill lbl L" style="top:676px"><i></i>JARAK</div>
-    <div id="ctr-p4" class="pill lbl R" style="top:676px"><i></i>MASA</div>
+    <div id="ctr-t0" class="sub line" style="top:300px">TALI SKIPPING NI ADA</div>
+    <div id="ctr-t1" class="hl line g" style="top:354px">DIGITAL</div>
+    <div id="ctr-t2" class="hl line" style="top:458px">COUNTER</div>
+    <div class="chiprow" style="top:572px"><div id="ctr-p1" class="pill lbl "><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>KIRAAN</div><div id="ctr-p2" class="pill lbl yb"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>KALORI</div></div>
+    <div class="chiprow" style="top:664px"><div id="ctr-p3" class="pill lbl pk"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>JARAK</div><div id="ctr-p4" class="pill lbl "><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>MASA</div></div>
   </div>
   <script>
     const tl = gsap.timeline({ paused: true });

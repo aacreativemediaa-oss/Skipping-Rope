@@ -35,31 +35,40 @@ IN_SLAM='{ opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.3, ease
 def out(sel, t): return f'    tl.to({sel}, {{ opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }}, {t});'
 W={}
 CHIPCSS=f'''
-    .pill {{ position:absolute; height:52px; padding: 0 18px; border-radius:26px; background: rgba(10,10,10,.72); border:2px solid #39FF14;
-            display:flex; align-items:center; gap:9px; font-size:{CHIP}px; color:#fff; white-space:nowrap; }}
-    .pill i {{ width:11px; height:11px; border-radius:50%; background:#39FF14; box-shadow: 0 0 10px #39FF14; display:block; }}
-    .pill.yb {{ border-color:#FFE600; }} .pill.yb i {{ background:#FFE600; box-shadow:0 0 10px #FFE600; }}
-    .L {{ left:150px; }} .R {{ right:210px; }}
-    .C {{ left:0; right:0; margin:0 auto; width:max-content; }}'''
+    .chiprow {{ position:absolute; left:0; width:1080px; display:flex; justify-content:center; gap:20px; }}
+    .pill {{ height:80px; padding: 0 30px 0 20px; border-radius:40px; background:#C8FF1E; border:none;
+            display:flex; align-items:center; gap:12px; font-size:40px; color:#000; white-space:nowrap; box-shadow: 0 6px 18px rgba(0,0,0,.45); }}
+    .pill.yb {{ background:#FFD60A; }} .pill.pk {{ background:#FF3C8E; color:#fff; }}
+    .pill i {{ width:38px; height:38px; border-radius:50%; background:#000; display:flex; align-items:center; justify-content:center; flex:none; }}
+    .pill i svg {{ width:22px; height:22px; }}'''
+CHK='<i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>'
+def chiprows(prefix, rows, y0, step=96, colors=("","yb","pk")):
+    out=[]; k=0
+    for r,row in enumerate(rows):
+        cells=[]
+        for name in row:
+            k+=1; cells.append(f'<div id="{prefix}-p{k}" class="pill lbl {colors[(k-1)%len(colors)]}">{CHK}{name}</div>')
+        out.append(f'    <div class="chiprow" style="top:{y0+r*step}px">'+"".join(cells)+'</div>')
+    return "\n".join(out), k
 def pop(sel,t): return f'    tl.fromTo("{sel}", {{ opacity: 0, scale: 0.6 }}, {{ opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }}, {t});'
 # ---------- CALORIES = HOOK (0-10) ----------
 data=[(w, int(11.8*3.5*w/200*10+0.5)) for w in (50,60,70,80,90,100)]
 mx=max(k for _,k in data)
-rows="".join(f'\n      <div id="cal-r{i}" class="row"><div class="lbl kg">{w} KG</div><div class="track"><div id="cal-b{i}" class="bar" data-pct="{round(k/mx,4)}"></div></div><div class="val"><span id="cal-n{i}" data-v="{k}">{k}</span><small class="lbl">kcal</small></div></div>' for i,(w,k) in enumerate(data,1))
+rows="".join(f'\n      <div id="cal-r{i}" class="row"><div class="kg">{w}KG</div><div class="track"><div id="cal-b{i}" class="bar" data-pct="{round(k/mx,4)}"></div></div><div class="val"><span id="cal-n{i}" data-v="{k}">{k}</span></div></div>' for i,(w,k) in enumerate(data,1))
 W['cal']=scene('cal',f'''
-    #cal-card {{ position:absolute; left:40px; top:310px; width:1000px; height:760px; border-radius:34px; background: rgba(10,10,10,.76); border: 6px solid #000; padding: 16px 40px 0; }}
-    #cal-head {{ font-family:"Anton",sans-serif; font-size:{SUB}px; line-height:62px; height:62px; color:#fff; text-align:center; text-transform:uppercase; letter-spacing:1px; }}
+    #cal-card {{ position:absolute; left:40px; top:310px; width:1000px; height:760px; border-radius:34px; background: rgba(10,10,10,.76); border: 6px solid #000; padding: 22px 44px 0; }}
+    #cal-head {{ display:flex; justify-content:space-between; height:44px; align-items:center; font-size:24px; letter-spacing:2px; color:#9a9a9a; }}
+    #cal-head .g {{ color:#C8FF1E; }}
     .row {{ display:flex; align-items:center; height:104px; }}
-    .kg {{ width:230px; font-size:50px; color:#fff; white-space:nowrap; }}
-    .track {{ flex:1; height:40px; border-radius:20px; background: rgba(255,255,255,.14); overflow:hidden; margin-right:24px; }}
-    .bar {{ width:100%; height:100%; border-radius:20px; background: linear-gradient(90deg,#FFE600,#39FF14); transform-origin: 0 50%; }}
-    .val {{ width:210px; text-align:right; font-family:"Anton",sans-serif; font-size:64px; color:#fff; line-height:1; white-space:nowrap; }}
-    .val small {{ font-size:30px; margin-left:6px; color:#ddd; }}
-    #cal-note {{ font-size:{CHIP}px; font-weight:600; color:#bbb; text-transform:none; letter-spacing:0; margin-top:4px; text-align:center; }}''',
+    .kg {{ width:190px; font-family:"Anton",sans-serif; font-size:50px; line-height:1; color:#fff; white-space:nowrap; }}
+    .track {{ flex:1; height:24px; border-radius:12px; background: rgba(255,255,255,.14); overflow:hidden; margin-right:28px; }}
+    .bar {{ width:100%; height:100%; border-radius:12px; background: linear-gradient(90deg,#FFE600,#C8FF1E); transform-origin: 0 50%; }}
+    .val {{ width:120px; text-align:right; font-family:"Anton",sans-serif; font-size:{SUB}px; color:#fff; line-height:1; white-space:nowrap; }}
+    #cal-note {{ font-size:{CHIP}px; font-weight:600; color:#bbb; text-transform:none; letter-spacing:0; margin-top:10px; text-align:center; }}''',
 f'''    <div class="topshade" id="cal-shade"></div>
     <div id="cal-t1" class="hl line" style="top:196px"><span class="y">10 MINIT</span> SKIPPING</div>
     <div id="cal-card">
-      <div id="cal-head"><span class="g">KALORI</span> TERBAKAR</div>{rows}
+      <div id="cal-head" class="lbl"><span>BERAT</span><span class="g">KALORI TERBAKAR (KCAL)</span></div>{rows}
       <div id="cal-note" class="lbl">*Anggaran, kadar sederhana</div>
     </div>''',
 f'''    // frame 0 sudah ada tajuk + kad (hook); bar dan nombor naik serentak supaya susunan sentiasa betul
@@ -73,11 +82,10 @@ f'''    // frame 0 sudah ada tajuk + kad (hook); bar dan nombor naik serentak su
       tl.fromTo(o, {{ n: v * 0.6 }}, {{ n: v, duration: 1.6, ease: "power2.out", onUpdate: () => {{ num.textContent = Math.round(o.n); }} }}, 0);
     }}
     tl.fromTo("#cal-r6", {{ scale: 1 }}, {{ scale: 1.04, duration: 0.3, ease: "back.out(1.6)" }}, 7.6);
-    tl.fromTo("#cal-n6", {{ color: "#ffffff" }}, {{ color: "#39FF14", duration: 0.2 }}, 7.6);
+    tl.fromTo("#cal-n6", {{ color: "#ffffff" }}, {{ color: "#C8FF1E", duration: 0.2 }}, 7.6);
 '''+out('["#cal-t1","#cal-card","#cal-shade"]',9.78))
 # ---------- OTOT (10-16) ----------
-pills=[("BAHU","L",700),("PUNGGUNG","R",700),("LENGAN","L",776),("PAHA","R",776),("PERUT / CORE","L",852),("BETIS","R",852)]
-pb="\n".join(f'    <div id="otot-p{i}" class="pill lbl {s}" style="top:{y}px"><i></i>{n}</div>' for i,(n,s,y) in enumerate(pills,1))
+pb,np_=chiprows("otot",[["BAHU","PUNGGUNG"],["LENGAN","PAHA"],["PERUT / CORE","BETIS"]],700)
 W['otot']=scene('otot',CHIPCSS,
 f'''    <div class="topshade" id="otot-shade"></div>
     <div id="otot-t1" class="hl line y" style="top:500px">OTOT</div>
@@ -85,26 +93,24 @@ f'''    <div class="topshade" id="otot-shade"></div>
 {pb}''',
 f'''    tl.fromTo("#otot-t1", {IN_SLAM}, 0.05);
     tl.fromTo("#otot-t2", {IN_BLUR}, 0.3);
-'''+"\n".join(pop(f"#otot-p{i}",round(0.5+(i-1)*0.3,2)) for i in range(1,7))+"\n"+out('["#otot-t1","#otot-t2","#otot-shade",".pill"]',5.78))
+'''+"\n".join(pop(f"#otot-p{i}",round(0.5+(i-1)*0.3,2)) for i in range(1,np_+1))+"\n"+out('["#otot-t1","#otot-t2","#otot-shade",".pill"]',5.78))
 # ---------- TOTAL BODY (16-21) ----------
-tb=[("KARDIO","L",700),("KEKUATAN","R",700),("KOORDINASI","L",776),("STAMINA","R",776)]
-tbb="\n".join(f'    <div id="tot-p{i}" class="pill lbl {s}" style="top:{y}px"><i></i>{n}</div>' for i,(n,s,y) in enumerate(tb,1))
+tbb,nt_=chiprows("tot",[["KARDIO","KEKUATAN"],["KOORDINASI","STAMINA"],["ATAS + BAWAH BADAN"]],700)
 W['total']=scene('total',CHIPCSS,
 f'''    <div class="topshade" id="tot-shade"></div>
     <div id="tot-t1" class="hl line" style="top:500px">TOTAL <span class="g">BODY</span></div>
     <div id="tot-t2" class="sub line" style="top:610px">WORKOUT</div>
-{tbb}
-    <div id="tot-p5" class="pill lbl yb C" style="top:852px"><i></i>ATAS + TENGAH + BAWAH BADAN</div>''',
+{tbb}''',
 f'''    tl.fromTo("#tot-t1", {{ opacity: 0, scale: 1.3, x: -24 }}, {{ opacity: 1, scale: 1, x: 0, duration: 0.3, ease: "expo.out" }}, 0.05);
     tl.fromTo("#tot-t2", {IN_BLUR}, 0.3);
-'''+"\n".join(pop(f"#tot-p{i}",round(0.7+(i-1)*0.35,2)) for i in range(1,6))+"\n"+out('["#tot-t1","#tot-t2","#tot-shade",".pill"]',4.78))
+'''+"\n".join(pop(f"#tot-p{i}",round(0.7+(i-1)*0.35,2)) for i in range(1,nt_+1))+"\n"+out('["#tot-t1","#tot-t2","#tot-shade",".pill"]',4.78))
 # ---------- DUAL MODE (21-30) ----------
 W['dual']=scene('dual',CHIPCSS,
-'''    <div class="topshade" id="dual-shade"></div>
+f'''    <div class="topshade" id="dual-shade"></div>
     <div id="dual-t1" class="hl line" style="top:330px">DUAL <span class="g">MODE</span></div>
     <div id="dual-s0" class="sub line" style="top:444px">BOLA PEMBERAT <span class="y">+</span> TALI PANJANG</div>
     <div id="dual-m1" class="sub line" style="top:444px; opacity:0">MODE 1: <span class="y">BOLA PEMBERAT</span></div>
-    <div id="dual-c1" class="pill lbl yb C" style="top:512px; opacity:0"><i></i>SESUAI UNTUK PEMULA</div>
+    <div class="chiprow" style="top:520px"><div id="dual-c1" class="pill lbl yb" style="opacity:0">{CHK}SESUAI UNTUK PEMULA</div></div>
     <div id="dual-m2" class="sub line" style="top:444px; opacity:0">MODE 2: <span class="y">TALI PANJANG</span></div>''',
 f'''    tl.fromTo("#dual-t1", {IN_SLAM}, 0.05);
     tl.fromTo("#dual-s0", {IN_BLUR}, 0.4);
@@ -114,18 +120,17 @@ f'''    tl.fromTo("#dual-t1", {IN_SLAM}, 0.05);
     tl.fromTo("#dual-m2", {{ opacity: 0, y: 16, filter: "blur(8px)" }}, {{ opacity: 1, y: 0, filter: "blur(0px)", duration: 0.25, ease: "power4.out" }}, 6.1);
 '''+out('["#dual-t1","#dual-m2","#dual-shade"]',8.78))
 # ---------- COUNTER (30-33.5) ----------
-cc=[("KIRAAN","L",600),("KALORI","R",600),("JARAK","L",676),("MASA","R",676)]
-ccb="\n".join(f'    <div id="ctr-p{i}" class="pill lbl {s}" style="top:{y}px"><i></i>{n}</div>' for i,(n,s,y) in enumerate(cc,1))
+ccb,nc_=chiprows("ctr",[["KIRAAN","KALORI"],["JARAK","MASA"]],572,step=92)
 W['counter']=scene('counter',CHIPCSS,
 f'''    <div class="topshade" id="ctr-shade"></div>
-    <div id="ctr-t0" class="sub line" style="top:330px">TALI SKIPPING NI ADA</div>
-    <div id="ctr-t1" class="hl line g" style="top:388px">DIGITAL</div>
-    <div id="ctr-t2" class="hl line" style="top:492px">COUNTER</div>
+    <div id="ctr-t0" class="sub line" style="top:300px">TALI SKIPPING NI ADA</div>
+    <div id="ctr-t1" class="hl line g" style="top:354px">DIGITAL</div>
+    <div id="ctr-t2" class="hl line" style="top:458px">COUNTER</div>
 {ccb}''',
 f'''    tl.fromTo("#ctr-t0", {IN_BLUR}, 0.05);
     tl.fromTo("#ctr-t1", {{ opacity: 0, scale: 1.3, x: -24 }}, {{ opacity: 1, scale: 1, x: 0, duration: 0.3, ease: "expo.out" }}, 0.1);
     tl.fromTo("#ctr-t2", {{ opacity: 0, scale: 1.3, x: 24 }}, {{ opacity: 1, scale: 1, x: 0, duration: 0.3, ease: "expo.out" }}, 0.22);
-'''+"\n".join(pop(f"#ctr-p{i}",round(0.8+(i-1)*0.4,2)) for i in range(1,5))+"\n"+out('["#ctr-t0","#ctr-t1","#ctr-t2","#ctr-shade",".pill"]',3.28))
+'''+"\n".join(pop(f"#ctr-p{i}",round(0.8+(i-1)*0.4,2)) for i in range(1,nc_+1))+"\n"+out('["#ctr-t0","#ctr-t1","#ctr-t2","#ctr-shade",".pill"]',3.28))
 # ---------- CTA (27.5-33) ----------
 W['cta']=scene('cta','''
     #cta-shade { position:absolute; inset:0; background: rgba(0,0,0,.36); }

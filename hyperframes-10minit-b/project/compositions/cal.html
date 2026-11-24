@@ -13,27 +13,27 @@
     .line { position: absolute; left: 0; width: 1080px; }
     .left { left: 130px; width: 520px; text-align: left; }
 
-    #cal-card { position:absolute; left:40px; top:310px; width:1000px; height:760px; border-radius:34px; background: rgba(10,10,10,.76); border: 6px solid #000; padding: 16px 40px 0; }
-    #cal-head { font-family:"Anton",sans-serif; font-size:47px; line-height:62px; height:62px; color:#fff; text-align:center; text-transform:uppercase; letter-spacing:1px; }
+    #cal-card { position:absolute; left:40px; top:310px; width:1000px; height:760px; border-radius:34px; background: rgba(10,10,10,.76); border: 6px solid #000; padding: 22px 44px 0; }
+    #cal-head { display:flex; justify-content:space-between; height:44px; align-items:center; font-size:24px; letter-spacing:2px; color:#9a9a9a; }
+    #cal-head .g { color:#C8FF1E; }
     .row { display:flex; align-items:center; height:104px; }
-    .kg { width:230px; font-size:50px; color:#fff; white-space:nowrap; }
-    .track { flex:1; height:40px; border-radius:20px; background: rgba(255,255,255,.14); overflow:hidden; margin-right:24px; }
-    .bar { width:100%; height:100%; border-radius:20px; background: linear-gradient(90deg,#FFE600,#39FF14); transform-origin: 0 50%; }
-    .val { width:210px; text-align:right; font-family:"Anton",sans-serif; font-size:64px; color:#fff; line-height:1; white-space:nowrap; }
-    .val small { font-size:30px; margin-left:6px; color:#ddd; }
-    #cal-note { font-size:19px; font-weight:600; color:#bbb; text-transform:none; letter-spacing:0; margin-top:4px; text-align:center; }
+    .kg { width:190px; font-family:"Anton",sans-serif; font-size:50px; line-height:1; color:#fff; white-space:nowrap; }
+    .track { flex:1; height:24px; border-radius:12px; background: rgba(255,255,255,.14); overflow:hidden; margin-right:28px; }
+    .bar { width:100%; height:100%; border-radius:12px; background: linear-gradient(90deg,#FFE600,#C8FF1E); transform-origin: 0 50%; }
+    .val { width:120px; text-align:right; font-family:"Anton",sans-serif; font-size:47px; color:#fff; line-height:1; white-space:nowrap; }
+    #cal-note { font-size:19px; font-weight:600; color:#bbb; text-transform:none; letter-spacing:0; margin-top:10px; text-align:center; }
   </style>
   <div id="root" data-composition-id="cal" data-width="1080" data-height="1920">
     <div class="topshade" id="cal-shade"></div>
     <div id="cal-t1" class="hl line" style="top:196px"><span class="y">10 MINIT</span> SKIPPING</div>
     <div id="cal-card">
-      <div id="cal-head"><span class="g">KALORI</span> TERBAKAR</div>
-      <div id="cal-r1" class="row"><div class="lbl kg">50 KG</div><div class="track"><div id="cal-b1" class="bar" data-pct="0.4976"></div></div><div class="val"><span id="cal-n1" data-v="103">103</span><small class="lbl">kcal</small></div></div>
-      <div id="cal-r2" class="row"><div class="lbl kg">60 KG</div><div class="track"><div id="cal-b2" class="bar" data-pct="0.599"></div></div><div class="val"><span id="cal-n2" data-v="124">124</span><small class="lbl">kcal</small></div></div>
-      <div id="cal-r3" class="row"><div class="lbl kg">70 KG</div><div class="track"><div id="cal-b3" class="bar" data-pct="0.7005"></div></div><div class="val"><span id="cal-n3" data-v="145">145</span><small class="lbl">kcal</small></div></div>
-      <div id="cal-r4" class="row"><div class="lbl kg">80 KG</div><div class="track"><div id="cal-b4" class="bar" data-pct="0.7971"></div></div><div class="val"><span id="cal-n4" data-v="165">165</span><small class="lbl">kcal</small></div></div>
-      <div id="cal-r5" class="row"><div class="lbl kg">90 KG</div><div class="track"><div id="cal-b5" class="bar" data-pct="0.8986"></div></div><div class="val"><span id="cal-n5" data-v="186">186</span><small class="lbl">kcal</small></div></div>
-      <div id="cal-r6" class="row"><div class="lbl kg">100 KG</div><div class="track"><div id="cal-b6" class="bar" data-pct="1.0"></div></div><div class="val"><span id="cal-n6" data-v="207">207</span><small class="lbl">kcal</small></div></div>
+      <div id="cal-head" class="lbl"><span>BERAT</span><span class="g">KALORI TERBAKAR (KCAL)</span></div>
+      <div id="cal-r1" class="row"><div class="kg">50KG</div><div class="track"><div id="cal-b1" class="bar" data-pct="0.4976"></div></div><div class="val"><span id="cal-n1" data-v="103">103</span></div></div>
+      <div id="cal-r2" class="row"><div class="kg">60KG</div><div class="track"><div id="cal-b2" class="bar" data-pct="0.599"></div></div><div class="val"><span id="cal-n2" data-v="124">124</span></div></div>
+      <div id="cal-r3" class="row"><div class="kg">70KG</div><div class="track"><div id="cal-b3" class="bar" data-pct="0.7005"></div></div><div class="val"><span id="cal-n3" data-v="145">145</span></div></div>
+      <div id="cal-r4" class="row"><div class="kg">80KG</div><div class="track"><div id="cal-b4" class="bar" data-pct="0.7971"></div></div><div class="val"><span id="cal-n4" data-v="165">165</span></div></div>
+      <div id="cal-r5" class="row"><div class="kg">90KG</div><div class="track"><div id="cal-b5" class="bar" data-pct="0.8986"></div></div><div class="val"><span id="cal-n5" data-v="186">186</span></div></div>
+      <div id="cal-r6" class="row"><div class="kg">100KG</div><div class="track"><div id="cal-b6" class="bar" data-pct="1.0"></div></div><div class="val"><span id="cal-n6" data-v="207">207</span></div></div>
       <div id="cal-note" class="lbl">*Anggaran, kadar sederhana</div>
     </div>
   </div>
@@ -50,7 +50,7 @@
       tl.fromTo(o, { n: v * 0.6 }, { n: v, duration: 1.6, ease: "power2.out", onUpdate: () => { num.textContent = Math.round(o.n); } }, 0);
     }
     tl.fromTo("#cal-r6", { scale: 1 }, { scale: 1.04, duration: 0.3, ease: "back.out(1.6)" }, 7.6);
-    tl.fromTo("#cal-n6", { color: "#ffffff" }, { color: "#39FF14", duration: 0.2 }, 7.6);
+    tl.fromTo("#cal-n6", { color: "#ffffff" }, { color: "#C8FF1E", duration: 0.2 }, 7.6);
     tl.to(["#cal-t1","#cal-card","#cal-shade"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, 9.78);
     window.__timelines["cal"] = tl;
   </script>

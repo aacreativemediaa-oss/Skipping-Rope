@@ -28,6 +28,18 @@ Font Anton untuk tajuk/caption, Montserrat untuk label.
 | Nombor heart rate | **64px** | 96px |
 | Chip, nama warna, label zon | **19px** | 28px |
 
+### Proporsi infografik (ikut contoh `Proportion.mp4`, Drive)
+| Elemen | Ukuran |
+|---|---|
+| Chip / pill (STEPS, MASA, KALORI, nama otot…) | pill tinggi **80px**, radius 40px, tulisan Montserrat ExtraBold **40px**, isi warna penuh (lime #C8FF1E / kuning #FFD60A / pink #FF3C8E), ikon ✓ bulat hitam 38px, jarak 20px. Ini menggantikan chip 19px dalam jadual di atas. |
+| Kotak jadual kalori (panel hitam) | lebar **1000px**, tinggi ~760px (y 310 → 1070), radius **34px**, garis hitam **6px** |
+| Setiap baris jadual | tinggi **104px** |
+| Label berat (50KG…100KG) | **Anton 50px** |
+| Nombor kalori | Anton 47px |
+| Bar | tebal 24px |
+| Header lajur jadual (BERAT, KALORI…) | Montserrat ExtraBold 24px |
+| Nota kaki (*Anggaran…) | 19px |
+
 - Caption huruf besar, stroke hitam. Perkataan aktif kuning, kata kunci hijau neon, 2–3 perkataan setiap kali, tengah bawah.
 - Tak bertindih: kalau grafik dah tunjuk ayat yang sama, caption untuk klausa penuh itu disembunyikan.
 
