@@ -1,0 +1,43 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.ttf") format("truetype"); font-weight: 400; }
+    @font-face { font-family: "MontserratV"; src: url("assets/fonts/Montserrat.ttf") format("truetype"); font-weight: 100 900; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .hl { font-family: "Anton", sans-serif; font-size: 100px; line-height: 1.04; color: #fff; text-transform: uppercase; text-align: center;
+          -webkit-text-stroke: 7px #000; paint-order: stroke fill; text-shadow: 0 6px 18px rgba(0,0,0,.55); letter-spacing: 1px; }
+    .sub { font-family: "Anton", sans-serif; font-size: 47px; line-height: 1.15; color: #fff; text-transform: uppercase; text-align: center;
+           -webkit-text-stroke: 5px #000; paint-order: stroke fill; text-shadow: 0 4px 12px rgba(0,0,0,.5); letter-spacing: 1px; }
+    .y { color: #FFE600; } .g { color: #39FF14; }
+    .lbl { font-family: "MontserratV", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+    .topshade { position: absolute; left: 0; top: 0; width: 1080px; height: 760px; background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0)); }
+    .line { position: absolute; left: 0; width: 1080px; }
+    .left { left: 130px; width: 520px; text-align: left; }
+
+    .chiprow { position:absolute; left:0; width:1080px; display:flex; justify-content:center; gap:20px; }
+    .pill { height:80px; padding: 0 30px 0 20px; border-radius:40px; background:#C8FF1E; border:none;
+            display:flex; align-items:center; gap:12px; font-size:40px; color:#000; white-space:nowrap; box-shadow: 0 6px 18px rgba(0,0,0,.45); }
+    .pill.yb { background:#FFD60A; } .pill.pk { background:#FF3C8E; color:#fff; }
+    .pill i { width:38px; height:38px; border-radius:50%; background:#000; display:flex; align-items:center; justify-content:center; flex:none; }
+    .pill i svg { width:22px; height:22px; }
+  </style>
+  <div id="root" data-composition-id="total" data-width="1080" data-height="1920">
+    <div class="topshade" id="tot-shade"></div>
+    <div id="tot-t1" class="hl line" style="top:500px">TOTAL <span class="g">BODY</span></div>
+    <div id="tot-t2" class="sub line" style="top:610px">WORKOUT</div>
+    <div class="chiprow" style="top:700px"><div id="tot-p1" class="pill lbl "><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>KARDIO</div><div id="tot-p2" class="pill lbl yb"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>KEKUATAN</div></div>
+    <div class="chiprow" style="top:796px"><div id="tot-p3" class="pill lbl pk"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>KOORDINASI</div><div id="tot-p4" class="pill lbl "><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>STAMINA</div></div>
+    <div class="chiprow" style="top:892px"><div id="tot-p5" class="pill lbl yb"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/></svg></i>ATAS + BAWAH BADAN</div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#tot-t1", { opacity: 0, scale: 1.3, x: -24 }, { opacity: 1, scale: 1, x: 0, duration: 0.3, ease: "expo.out" }, 0.05);
+    tl.fromTo("#tot-t2", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 0.3);
+    tl.fromTo("#tot-p1", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 0.7);
+    tl.fromTo("#tot-p2", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 1.05);
+    tl.fromTo("#tot-p3", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 1.4);
+    tl.fromTo("#tot-p4", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 1.75);
+    tl.fromTo("#tot-p5", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 2.1);
+    tl.to(["#tot-t1","#tot-t2","#tot-shade",".pill"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, 4.78);
+    window.__timelines["total"] = tl;
+  </script>
+</template>
