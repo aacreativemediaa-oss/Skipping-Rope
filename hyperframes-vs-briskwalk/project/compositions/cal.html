@@ -1,0 +1,88 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.ttf") format("truetype"); font-weight: 400; }
+    @font-face { font-family: "MontserratV"; src: url("assets/fonts/Montserrat.ttf") format("truetype"); font-weight: 100 900; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .hl { font-family: "Anton", sans-serif; font-size: 100px; line-height: 1.04; color: #fff; text-transform: uppercase; text-align: center;
+          -webkit-text-stroke: 7px #000; paint-order: stroke fill; text-shadow: 0 6px 18px rgba(0,0,0,.55); letter-spacing: 1px; }
+    .sub { font-family: "Anton", sans-serif; font-size: 47px; line-height: 1.15; color: #fff; text-transform: uppercase; text-align: center;
+           -webkit-text-stroke: 5px #000; paint-order: stroke fill; text-shadow: 0 4px 12px rgba(0,0,0,.5); letter-spacing: 1px; }
+    .y { color: #FFE600; } .g { color: #39FF14; }
+    .lbl { font-family: "MontserratV", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+    .topshade { position: absolute; left: 0; top: 0; width: 1080px; height: 760px; background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0)); }
+    .line { position: absolute; left: 0; width: 1080px; }
+    .left { left: 130px; width: 520px; text-align: left; }
+
+    .tag { position:absolute; left:0; right:0; margin:0 auto; width:max-content; top:300px; padding:4px 30px 8px 18px; background:#C8FF1E;
+           font-family:"Anton",sans-serif; font-size:47px; line-height:1.15; color:#000; text-transform:uppercase; transform:rotate(-2deg);
+           display:flex; align-items:center; gap:14px; box-shadow:0 6px 18px rgba(0,0,0,.4); }
+    .tag b { width:46px; height:46px; border:3px solid #000; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; font-weight:400; }
+    .panel { position:absolute; left:40px; width:1000px; border-radius:34px; background:rgba(12,12,12,.82); border:6px solid #000; box-shadow:0 10px 30px rgba(0,0,0,.4); }
+    .colhead { font-family:"Anton",sans-serif; font-size:47px; line-height:1; text-transform:uppercase; text-align:center; }
+    .sk { color:#C8FF1E; } .bw { color:#fff; }
+    .mchip { height:52px; padding:0 20px 0 12px; border-radius:26px; display:flex; align-items:center; gap:9px; font-size:26px; white-space:nowrap; }
+    .mchip i { width:28px; height:28px; border-radius:50%; background:#000; display:flex; align-items:center; justify-content:center; flex:none; }
+    .mchip i svg { width:17px; height:17px; }
+    .mchip.l { background:#C8FF1E; color:#000; } .mchip.w { background:#fff; color:#000; } .mchip.y { background:#FFD60A; color:#000; }
+    .vs { width:84px; height:84px; border-radius:50%; background:#E8252B; border:5px solid #fff; color:#fff; font-family:"Anton",sans-serif; font-size:40px;
+          display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(0,0,0,.5); }
+    .sticker { position:absolute; left:0; right:0; margin:0 auto; width:max-content; padding:6px 30px 10px; background:#FF3C8E; color:#fff;
+               font-family:"Anton",sans-serif; font-size:47px; line-height:1.15; text-transform:uppercase; transform:rotate(-3deg); box-shadow:0 6px 18px rgba(0,0,0,.45); }
+    #cal-p { top:392px; height:740px; padding:20px 40px 0; }
+    .chead { display:flex; height:44px; align-items:center; font-size:24px; letter-spacing:2px; color:#9a9a9a; }
+    .crow { display:flex; align-items:center; height:104px; border-top:1px solid rgba(255,255,255,.06); }
+    .ckg { width:160px; font-family:"Anton",sans-serif; font-size:50px; line-height:1; color:#fff; }
+    .ctr { height:24px; border-radius:12px; background:rgba(255,255,255,.12); overflow:hidden; }
+    .bwt { width:170px; } .skt { width:250px; margin-left:14px; }
+    .cbar { width:100%; height:100%; border-radius:12px; transform-origin:0 50%; }
+    .bwb { background:#9aa3a8; } .skb { background:linear-gradient(90deg,#FFD60A,#C8FF1E); }
+    .cnum { width:96px; text-align:right; font-family:"Anton",sans-serif; font-size:47px; color:#fff; line-height:1; padding-right:6px; }
+    .cnum.sk { color:#C8FF1E; width:110px; }
+    #cal-note { font-size:19px; font-weight:600; color:#bbb; text-transform:none; letter-spacing:0; margin-top:12px; text-align:center; }
+  </style>
+  <div id="root" data-composition-id="cal" data-width="1080" data-height="1920">
+    <div class="topshade" id="cal-shade"></div>
+    <div id="cal-tag" class="tag"><b>2</b>KALORI DALAM 10 MINIT</div>
+    <div id="cal-p" class="panel">
+      <div class="chead lbl"><span style="width:160px">BERAT</span><span style="width:266px">BRISKWALK</span><span class="sk" style="width:374px; text-align:center">SKIPPING</span></div>
+      <div id="cal-r1" class="crow"><div class="ckg">50KG</div>
+        <div class="ctr bwt"><div id="cal-bb1" class="cbar bwb" data-pct="0.1836"></div></div><div class="cnum"><span id="cal-nb1" data-v="38">0</span></div>
+        <div class="ctr skt"><div id="cal-sb1" class="cbar skb" data-pct="0.4976"></div></div><div class="cnum sk"><span id="cal-ns1" data-v="103">0</span></div></div>
+      <div id="cal-r2" class="crow"><div class="ckg">60KG</div>
+        <div class="ctr bwt"><div id="cal-bb2" class="cbar bwb" data-pct="0.2174"></div></div><div class="cnum"><span id="cal-nb2" data-v="45">0</span></div>
+        <div class="ctr skt"><div id="cal-sb2" class="cbar skb" data-pct="0.599"></div></div><div class="cnum sk"><span id="cal-ns2" data-v="124">0</span></div></div>
+      <div id="cal-r3" class="crow"><div class="ckg">70KG</div>
+        <div class="ctr bwt"><div id="cal-bb3" class="cbar bwb" data-pct="0.256"></div></div><div class="cnum"><span id="cal-nb3" data-v="53">0</span></div>
+        <div class="ctr skt"><div id="cal-sb3" class="cbar skb" data-pct="0.7005"></div></div><div class="cnum sk"><span id="cal-ns3" data-v="145">0</span></div></div>
+      <div id="cal-r4" class="crow"><div class="ckg">80KG</div>
+        <div class="ctr bwt"><div id="cal-bb4" class="cbar bwb" data-pct="0.2899"></div></div><div class="cnum"><span id="cal-nb4" data-v="60">0</span></div>
+        <div class="ctr skt"><div id="cal-sb4" class="cbar skb" data-pct="0.7971"></div></div><div class="cnum sk"><span id="cal-ns4" data-v="165">0</span></div></div>
+      <div id="cal-r5" class="crow"><div class="ckg">90KG</div>
+        <div class="ctr bwt"><div id="cal-bb5" class="cbar bwb" data-pct="0.3285"></div></div><div class="cnum"><span id="cal-nb5" data-v="68">0</span></div>
+        <div class="ctr skt"><div id="cal-sb5" class="cbar skb" data-pct="0.8986"></div></div><div class="cnum sk"><span id="cal-ns5" data-v="186">0</span></div></div>
+      <div id="cal-r6" class="crow"><div class="ckg">100KG</div>
+        <div class="ctr bwt"><div id="cal-bb6" class="cbar bwb" data-pct="0.3623"></div></div><div class="cnum"><span id="cal-nb6" data-v="75">0</span></div>
+        <div class="ctr skt"><div id="cal-sb6" class="cbar skb" data-pct="1.0"></div></div><div class="cnum sk"><span id="cal-ns6" data-v="207">0</span></div></div>
+      <div id="cal-note" class="lbl">*Anggaran. MET briskwalk 4.3, skipping 11.8 (Compendium of Physical Activities)</div>
+    </div>
+    <div id="cal-st" class="sticker" style="top:1150px; opacity:0">SKIPPING ±2.7X LEBIH BANYAK!</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#cal-tag", { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 0.05);
+    tl.fromTo("#cal-p", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.2);
+    for (let i = 1; i <= 6; i++) {
+      for (const k of ["b","s"]) {
+        const bar = document.querySelector("#cal-" + k + "b" + i), num = document.querySelector("#cal-n" + k + i);
+        const pct = parseFloat(bar.dataset.pct), v = parseInt(num.dataset.v, 10);
+        const t0 = k === "b" ? 0.7 : 2.4;
+        tl.fromTo(bar, { scaleX: 0 }, { scaleX: pct, duration: 1.4, ease: "power2.out" }, t0);
+        const o = { n: 0 };
+        tl.fromTo(o, { n: 0 }, { n: v, duration: 1.4, ease: "power2.out", onUpdate: () => { num.textContent = Math.round(o.n); } }, t0);
+      }
+    }
+    tl.fromTo("#cal-st", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 5.0);
+    tl.to(["#cal-tag","#cal-p","#cal-st","#cal-shade"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, 9.78);
+    window.__timelines["cal"] = tl;
+  </script>
+</template>
