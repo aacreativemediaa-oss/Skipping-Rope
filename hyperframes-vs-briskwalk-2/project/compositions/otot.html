@@ -1,0 +1,80 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.ttf") format("truetype"); font-weight: 400; }
+    @font-face { font-family: "MontserratV"; src: url("assets/fonts/Montserrat.ttf") format("truetype"); font-weight: 100 900; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .hl { font-family: "Anton", sans-serif; font-size: 100px; line-height: 1.04; color: #fff; text-transform: uppercase; text-align: center;
+          -webkit-text-stroke: 7px #000; paint-order: stroke fill; text-shadow: 0 6px 18px rgba(0,0,0,.55); letter-spacing: 1px; }
+    .sub { font-family: "Anton", sans-serif; font-size: 47px; line-height: 1.15; color: #fff; text-transform: uppercase; text-align: center;
+           -webkit-text-stroke: 5px #000; paint-order: stroke fill; text-shadow: 0 4px 12px rgba(0,0,0,.5); letter-spacing: 1px; }
+    .y { color: #FFE600; } .g { color: #39FF14; }
+    .lbl { font-family: "MontserratV", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+    .topshade { position: absolute; left: 0; top: 0; width: 1080px; height: 760px; background: linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,0)); }
+    .line { position: absolute; left: 0; width: 1080px; }
+    .left { left: 130px; width: 520px; text-align: left; }
+
+    .tag { position:absolute; left:0; right:0; margin:0 auto; width:max-content; top:300px; padding:4px 30px 8px 18px; background:#C8FF1E;
+           font-family:"Anton",sans-serif; font-size:47px; line-height:1.15; color:#000; text-transform:uppercase; transform:rotate(-2deg);
+           display:flex; align-items:center; gap:14px; box-shadow:0 6px 18px rgba(0,0,0,.4); }
+    .tag b { width:46px; height:46px; border:3px solid #000; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; font-weight:400; }
+    .panel { position:absolute; left:40px; width:1000px; border-radius:34px; background:rgba(12,12,12,.82); border:6px solid #000; box-shadow:0 10px 30px rgba(0,0,0,.4); }
+    .colhead { font-family:"Anton",sans-serif; font-size:47px; line-height:1; text-transform:uppercase; text-align:center; }
+    .sk { color:#C8FF1E; } .bw { color:#fff; }
+    .mchip { height:52px; padding:0 20px 0 12px; border-radius:26px; display:flex; align-items:center; gap:9px; font-size:26px; white-space:nowrap; }
+    .mchip i { width:28px; height:28px; border-radius:50%; background:#000; display:flex; align-items:center; justify-content:center; flex:none; }
+    .mchip i svg { width:17px; height:17px; }
+    .mchip.l { background:#C8FF1E; color:#000; } .mchip.w { background:#fff; color:#000; } .mchip.y { background:#FFD60A; color:#000; }
+    .vs { width:84px; height:84px; border-radius:50%; background:#E8252B; border:5px solid #fff; color:#fff; font-family:"Anton",sans-serif; font-size:40px;
+          display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(0,0,0,.5); }
+    .sticker { position:absolute; left:0; right:0; margin:0 auto; width:max-content; padding:6px 30px 10px; background:#FF3C8E; color:#fff;
+               font-family:"Anton",sans-serif; font-size:47px; line-height:1.15; text-transform:uppercase; transform:rotate(-3deg); box-shadow:0 6px 18px rgba(0,0,0,.45); }
+    #otot-p { top:392px; height:740px; display:flex; justify-content:space-between; padding:24px 34px 0; }
+    .ocol { width:440px; display:flex; flex-direction:column; align-items:center; gap:12px; }
+    .bodysvg { width:170px; height:347px; }
+    .ochips { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; min-height:112px; align-content:flex-start; }
+    .klabel { font-size:24px; letter-spacing:2px; color:#9a9a9a; margin-top:6px; }
+    .meter { display:flex; gap:10px; }
+    .dot { width:46px; height:18px; border-radius:9px; background:rgba(255,255,255,.14); }
+  </style>
+  <div id="root" data-composition-id="otot" data-width="1080" data-height="1920">
+    <div class="topshade" id="otot-shade"></div>
+    <div id="otot-tag" class="tag"><b>2</b>OTOT &amp; KOORDINASI</div>
+    <div id="otot-p" class="panel">
+      <div class="ocol"><div class="colhead sk">SKIPPING</div><svg viewBox="0 0 120 245" class="bodysvg"><g id="osk-head" fill="#3a3a3a" stroke="#777" stroke-width="2" data-on="0"><circle cx="60" cy="22" r="15"/></g><g id="osk-bahu" fill="#3a3a3a" stroke="#777" stroke-width="2" data-on="1"><path d="M30 46 Q60 34 90 46 L86 58 Q60 50 34 58 Z"/></g><g id="osk-dada" fill="#3a3a3a" stroke="#777" stroke-width="2" data-on="0"><rect x="38" y="58" width="44" height="24" rx="6"/></g><g id="osk-core" fill="#3a3a3a" stroke="#777" stroke-width="2" data-on="1"><rect x="42" y="84" width="36" height="34" rx="6"/></g><g id="osk-lengan" fill="#3a3a3a" stroke="#777" stroke-width="2" data-on="1"><rect x="16" y="50" width="14" height="62" rx="7"/><rect x="90" y="50" width="14" height="62" rx="7"/></g><g id="osk-pinggul" fill="#3a3a3a" stroke="#777" stroke-width="2" data-on="0"><rect x="40" y="120" width="40" height="16" rx="6"/></g><g id="osk-peha" fill="#3a3a3a" stroke="#777" stroke-width="2" data-on="1"><rect x="40" y="138" width="18" height="50" rx="8"/><rect x="62" y="138" width="18" height="50" rx="8"/></g><g id="osk-betis" fill="#3a3a3a" stroke="#777" stroke-width="2" data-on="1"><rect x="42" y="192" width="15" height="46" rx="7"/><rect x="63" y="192" width="15" height="46" rx="7"/></g></svg>
+        <div class="ochips"><div id="otot-a1" class="mchip lbl l"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i>BAHU &amp; LENGAN</div><div id="otot-a2" class="mchip lbl l"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i>PERUT / CORE</div><div id="otot-a3" class="mchip lbl l"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i>PEHA</div><div id="otot-a4" class="mchip lbl l"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i>BETIS</div></div>
+        <div class="klabel lbl">KOORDINASI</div><div class="meter"><span id="osk-k1" class="dot" data-c="#C8FF1E"></span><span id="osk-k2" class="dot" data-c="#C8FF1E"></span><span id="osk-k3" class="dot" data-c="#C8FF1E"></span><span id="osk-k4" class="dot" data-c="#C8FF1E"></span><span id="osk-k5" class="dot" data-c="#C8FF1E"></span></div></div>
+      <div class="ocol"><div class="colhead bw">BRISKWALK</div><svg viewBox="0 0 120 245" class="bodysvg"><g id="obw-head" fill="#3a3a3a" stroke="#777" stroke-width="2" data-on="0"><circle cx="60" cy="22" r="15"/></g><g id="obw-bahu" fill="#3a3a3a" stroke="#777" stroke-width="2" data-on="0"><path d="M30 46 Q60 34 90 46 L86 58 Q60 50 34 58 Z"/></g><g id="obw-dada" fill="#3a3a3a" stroke="#777" stroke-width="2" data-on="0"><rect x="38" y="58" width="44" height="24" rx="6"/></g><g id="obw-core" fill="#3a3a3a" stroke="#777" stroke-width="2" data-on="0"><rect x="42" y="84" width="36" height="34" rx="6"/></g><g id="obw-lengan" fill="#3a3a3a" stroke="#777" stroke-width="2" data-on="0"><rect x="16" y="50" width="14" height="62" rx="7"/><rect x="90" y="50" width="14" height="62" rx="7"/></g><g id="obw-pinggul" fill="#3a3a3a" stroke="#777" stroke-width="2" data-on="0"><rect x="40" y="120" width="40" height="16" rx="6"/></g><g id="obw-peha" fill="#3a3a3a" stroke="#777" stroke-width="2" data-on="1"><rect x="40" y="138" width="18" height="50" rx="8"/><rect x="62" y="138" width="18" height="50" rx="8"/></g><g id="obw-betis" fill="#3a3a3a" stroke="#777" stroke-width="2" data-on="1"><rect x="42" y="192" width="15" height="46" rx="7"/><rect x="63" y="192" width="15" height="46" rx="7"/></g></svg>
+        <div class="ochips"><div id="otot-b1" class="mchip lbl y"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i>PEHA</div><div id="otot-b2" class="mchip lbl y"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i>BETIS</div></div>
+        <div class="klabel lbl">KOORDINASI</div><div class="meter"><span id="obw-k1" class="dot" data-c="#FFD60A"></span><span id="obw-k2" class="dot" data-c="#FFD60A"></span><span id="obw-k3" class="dot" data-c=""></span><span id="obw-k4" class="dot" data-c=""></span><span id="obw-k5" class="dot" data-c=""></span></div></div>
+    </div>
+    <div id="otot-st" class="sticker" style="top:1150px; opacity:0">TANGAN + KAKI SERENTAK!</div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#otot-tag", { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 0.05);
+    tl.fromTo("#otot-p", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.2);
+    tl.fromTo("#obw-peha", { fill: "#3a3a3a" }, { fill: "#FFD60A", duration: 0.25 }, 0.8);
+    tl.fromTo("#obw-betis", { fill: "#3a3a3a" }, { fill: "#FFD60A", duration: 0.25 }, 1.1);
+    tl.fromTo("#otot-b1", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 0.9);
+    tl.fromTo("#otot-b2", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 1.2);
+    tl.fromTo("#osk-bahu", { fill: "#3a3a3a" }, { fill: "#C8FF1E", duration: 0.25 }, 1.8);
+    tl.fromTo("#osk-lengan", { fill: "#3a3a3a" }, { fill: "#C8FF1E", duration: 0.25 }, 2.1);
+    tl.fromTo("#osk-core", { fill: "#3a3a3a" }, { fill: "#C8FF1E", duration: 0.25 }, 2.4);
+    tl.fromTo("#osk-peha", { fill: "#3a3a3a" }, { fill: "#C8FF1E", duration: 0.25 }, 2.7);
+    tl.fromTo("#osk-betis", { fill: "#3a3a3a" }, { fill: "#C8FF1E", duration: 0.25 }, 3.0);
+    tl.fromTo("#otot-a1", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 1.9);
+    tl.fromTo("#otot-a2", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 2.25);
+    tl.fromTo("#otot-a3", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 2.6);
+    tl.fromTo("#otot-a4", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 2.95);
+    tl.fromTo("#obw-k1", { backgroundColor: "rgba(255,255,255,0.14)" }, { backgroundColor: "#FFD60A", duration: 0.15 }, 3.72);
+    tl.fromTo("#obw-k2", { backgroundColor: "rgba(255,255,255,0.14)" }, { backgroundColor: "#FFD60A", duration: 0.15 }, 3.84);
+    tl.fromTo("#osk-k1", { backgroundColor: "rgba(255,255,255,0.14)" }, { backgroundColor: "#C8FF1E", duration: 0.15 }, 4.12);
+    tl.fromTo("#osk-k2", { backgroundColor: "rgba(255,255,255,0.14)" }, { backgroundColor: "#C8FF1E", duration: 0.15 }, 4.24);
+    tl.fromTo("#osk-k3", { backgroundColor: "rgba(255,255,255,0.14)" }, { backgroundColor: "#C8FF1E", duration: 0.15 }, 4.36);
+    tl.fromTo("#osk-k4", { backgroundColor: "rgba(255,255,255,0.14)" }, { backgroundColor: "#C8FF1E", duration: 0.15 }, 4.48);
+    tl.fromTo("#osk-k5", { backgroundColor: "rgba(255,255,255,0.14)" }, { backgroundColor: "#C8FF1E", duration: 0.15 }, 4.6);
+    tl.fromTo("#otot-st", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.8)" }, 4.8);
+    tl.to(["#otot-tag","#otot-p","#otot-st","#otot-shade"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, 6.78);
+    window.__timelines["otot"] = tl;
+  </script>
+</template>
