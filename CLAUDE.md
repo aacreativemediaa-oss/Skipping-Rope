@@ -17,6 +17,12 @@ Rujukan projek terdahulu: `hyperframes/project/` (10 Minit Skipping) dan `hyperf
 - Potong klip dengan penapis `trim`/`atrim` (seek frame-tepat), bukan `-ss` sebelum `-i`: sesetengah fail sumber dah ada potongan dalaman.
 - Footage iPhone HDR (HLG/Dolby Vision, `color_transfer` bermula `arib-std-b67`) mesti ditukar ke SDR bt709 (zscale + tonemap). Semak warna klip yang disediakan berbanding sumber sebelum render — kalau pucat/kelabu, penukaran tak berlaku.
 
+## Warna footage — JANGAN KACAU colour grading asal
+- Tiada colour grading, LUT, filter, atau ubah kontras / saturation / kecerahan / suhu warna pada footage. Tiada `media-treatment`, `eq`, `curves` atau penapis warna CSS.
+- Footage SDR (bt709): hanya scale / crop / fps — warna dibiarkan seperti asal.
+- Footage HDR iPhone: hanya penukaran teknikal HDR → SDR (langkah di atas) supaya rupa sama seperti asal, bukan untuk ubah gaya. Bandingkan frame klip yang disediakan dengan sumber; kalau warna lari, betulkan penukaran, jangan grade.
+- Jangan gelapkan seluruh frame (contoh: lapisan hitam separa lut sinar penuh skrin pada CTA). Untuk bacaan teks, guna panel / pelekat / stroke pada teks itu sendiri, atau bayang setempat yang kecil di belakang teks sahaja.
+
 ## Teks & caption
 Font Anton untuk tajuk/caption, Montserrat untuk label.
 
