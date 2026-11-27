@@ -1,0 +1,56 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.ttf") format("truetype"); font-weight: 400; }
+    @font-face { font-family: "MontserratV"; src: url("assets/fonts/Montserrat.ttf") format("truetype"); font-weight: 100 900; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .hl { font-family: "Anton", sans-serif; font-size: 85px; line-height: 1.04; color: #fff; text-transform: uppercase; text-align: center;
+          -webkit-text-stroke: 7px #000; paint-order: stroke fill; text-shadow: 0 6px 18px rgba(0,0,0,.55); letter-spacing: 1px; }
+    .sub { font-family: "Anton", sans-serif; font-size: 47px; line-height: 1.15; color: #fff; text-transform: uppercase; text-align: center;
+           -webkit-text-stroke: 5px #000; paint-order: stroke fill; text-shadow: 0 4px 12px rgba(0,0,0,.5); letter-spacing: 1px; }
+    .y { color: #FFE600; } .g { color: #39FF14; }
+    .lbl { font-family: "MontserratV", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+    .topshade { display:none; }
+    .line { position: absolute; left: 0; width: 1080px; }
+    .left { left: 130px; width: 520px; text-align: left; }
+
+    .cg { position:absolute; left:0; top:1178px; width:1080px; height:70px; overflow: visible; }
+    .ci { width:1080px; text-align:center; font-family:"Anton",sans-serif; font-size:40px; line-height:70px; color:#fff; text-transform:uppercase;
+          -webkit-text-stroke: 6px #000; paint-order: stroke fill; text-shadow: 0 4px 10px rgba(0,0,0,.6); letter-spacing: 1px; }
+    .w { display:inline-block; color:#fff; margin: 0 4px; }
+    .w.kw { color:#39FF14; }
+  </style>
+  <div id="root" data-composition-id="captions" data-width="1080" data-height="1920">
+    <div id="cap1" class="clip cg" data-start="30.3" data-duration="1.9" data-track-index="0"><div id="cap1i" class="ci"><span id="cap1w1" class="w">TAK</span> <span id="cap1w2" class="w kw">TERSANGKUT</span> <span id="cap1w3" class="w">KAKI</span></div></div>
+    <div id="cap2" class="clip cg" data-start="33.1" data-duration="2.2" data-track-index="0"><div id="cap2i" class="ci"><span id="cap2w1" class="w">NAK</span> <span id="cap2w2" class="w">LEBIH</span> <span id="cap2w3" class="w kw">CABARAN?</span></div></div>
+    <div id="cap3" class="clip cg" data-start="36.5" data-duration="1.1" data-track-index="0"><div id="cap3i" class="ci"><span id="cap3w1" class="w">SESUAI</span> <span id="cap3w2" class="w">UNTUK</span></div></div>
+    <div id="cap4" class="clip cg" data-start="37.6" data-duration="1.2" data-track-index="0"><div id="cap4i" class="ci"><span id="cap4w1" class="w kw">SEMUA</span> <span id="cap4w2" class="w">PERINGKAT</span></div></div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#cap1i", { scale: 0.82, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.16, ease: "back.out(2)" }, 30.3);
+    tl.set("#cap1w1", { color: "#FFE600", scale: 1.12 }, 30.3);
+    tl.set("#cap1w1", { color: "#ffffff", scale: 1 }, 30.687);
+    tl.set("#cap1w2", { color: "#39FF14", scale: 1.12 }, 30.687);
+    tl.set("#cap1w2", { color: "#39FF14", scale: 1 }, 31.616);
+    tl.set("#cap1w3", { color: "#FFE600", scale: 1.12 }, 31.616);
+    tl.to("#cap1i", { opacity: 0, duration: 0.1, ease: "power2.in" }, 32.1);
+    tl.fromTo("#cap2i", { scale: 0.82, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.16, ease: "back.out(2)" }, 33.1);
+    tl.set("#cap2w1", { color: "#FFE600", scale: 1.12 }, 33.1);
+    tl.set("#cap2w1", { color: "#ffffff", scale: 1 }, 33.573);
+    tl.set("#cap2w2", { color: "#FFE600", scale: 1.12 }, 33.573);
+    tl.set("#cap2w2", { color: "#ffffff", scale: 1 }, 34.235);
+    tl.set("#cap2w3", { color: "#39FF14", scale: 1.12 }, 34.235);
+    tl.to("#cap2i", { opacity: 0, duration: 0.1, ease: "power2.in" }, 35.2);
+    tl.fromTo("#cap3i", { scale: 0.82, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.16, ease: "back.out(2)" }, 36.5);
+    tl.set("#cap3w1", { color: "#FFE600", scale: 1.12 }, 36.5);
+    tl.set("#cap3w1", { color: "#ffffff", scale: 1 }, 37.023);
+    tl.set("#cap3w2", { color: "#FFE600", scale: 1.12 }, 37.023);
+    tl.to("#cap3i", { opacity: 0, duration: 0.1, ease: "power2.in" }, 37.5);
+    tl.fromTo("#cap4i", { scale: 0.82, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.16, ease: "back.out(2)" }, 37.6);
+    tl.set("#cap4w1", { color: "#39FF14", scale: 1.12 }, 37.6);
+    tl.set("#cap4w1", { color: "#39FF14", scale: 1 }, 38.02);
+    tl.set("#cap4w2", { color: "#FFE600", scale: 1.12 }, 38.02);
+    tl.to("#cap4i", { opacity: 0, duration: 0.1, ease: "power2.in" }, 38.7);
+    window.__timelines["captions"] = tl;
+  </script>
+</template>

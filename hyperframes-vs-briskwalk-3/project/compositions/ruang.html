@@ -1,0 +1,61 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.ttf") format("truetype"); font-weight: 400; }
+    @font-face { font-family: "MontserratV"; src: url("assets/fonts/Montserrat.ttf") format("truetype"); font-weight: 100 900; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .hl { font-family: "Anton", sans-serif; font-size: 85px; line-height: 1.04; color: #fff; text-transform: uppercase; text-align: center;
+          -webkit-text-stroke: 7px #000; paint-order: stroke fill; text-shadow: 0 6px 18px rgba(0,0,0,.55); letter-spacing: 1px; }
+    .sub { font-family: "Anton", sans-serif; font-size: 47px; line-height: 1.15; color: #fff; text-transform: uppercase; text-align: center;
+           -webkit-text-stroke: 5px #000; paint-order: stroke fill; text-shadow: 0 4px 12px rgba(0,0,0,.5); letter-spacing: 1px; }
+    .y { color: #FFE600; } .g { color: #39FF14; }
+    .lbl { font-family: "MontserratV", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+    .topshade { display:none; }
+    .line { position: absolute; left: 0; width: 1080px; }
+    .left { left: 130px; width: 520px; text-align: left; }
+
+    .tag { position:absolute; left:0; right:0; margin:0 auto; width:max-content; top:300px; padding:4px 30px 8px 18px; background:#C8FF1E;
+           font-family:"Anton",sans-serif; font-size:47px; line-height:1.15; color:#000; text-transform:uppercase; transform:rotate(-2deg);
+           display:flex; align-items:center; gap:14px; box-shadow:0 6px 18px rgba(0,0,0,.4); }
+    .tag b { width:46px; height:46px; border:3px solid #000; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:30px; font-weight:400; }
+    .panel { position:absolute; left:90px; width:900px; border-radius:34px; background:rgba(12,12,12,.82); border:6px solid #000; box-shadow:0 10px 30px rgba(0,0,0,.4); }
+    .colhead { font-family:"Anton",sans-serif; font-size:47px; line-height:1; text-transform:uppercase; text-align:center; }
+    .sk { color:#C8FF1E; } .bw { color:#fff; }
+    .mchip { height:52px; padding:0 20px 0 12px; border-radius:26px; display:flex; align-items:center; gap:9px; font-size:26px; white-space:nowrap; }
+    .mchip i { width:28px; height:28px; border-radius:50%; background:#000; display:flex; align-items:center; justify-content:center; flex:none; }
+    .mchip i svg { width:17px; height:17px; }
+    .mchip.l { background:#C8FF1E; color:#000; } .mchip.w { background:#fff; color:#000; } .mchip.y { background:#FFD60A; color:#000; }
+    .vs { width:84px; height:84px; border-radius:50%; background:#E8252B; border:5px solid #fff; color:#fff; font-family:"Anton",sans-serif; font-size:40px;
+          display:flex; align-items:center; justify-content:center; box-shadow:0 6px 16px rgba(0,0,0,.5); }
+    .sticker { position:absolute; left:0; right:0; margin:0 auto; width:max-content; padding:6px 30px 10px; background:#FF3C8E; color:#fff;
+               font-family:"Anton",sans-serif; font-size:47px; line-height:1.15; text-transform:uppercase; transform:rotate(-3deg); box-shadow:0 6px 18px rgba(0,0,0,.45); }
+    #ruang-tag { top:590px; }
+    #ruang-p { top:676px; height:452px; display:flex; justify-content:space-between; padding:22px 34px 0; }
+    .rcol { width:400px; display:flex; flex-direction:column; align-items:center; gap:10px; }
+    .ricon { width:120px; height:120px; border-radius:50%; background:#fff; display:flex; align-items:center; justify-content:center; }
+    .ricon svg { width:92px; height:92px; }
+    .rlabel { font-size:24px; letter-spacing:2px; color:#9a9a9a; margin-top:2px; }
+    .rchips { display:flex; flex-direction:column; align-items:center; gap:8px; }
+  </style>
+  <div id="root" data-composition-id="ruang" data-width="1080" data-height="1920">
+    <div id="ruang-tag" class="tag"><b>3</b>RUANG &amp; PERALATAN</div>
+    <div id="ruang-p" class="panel">
+      <div class="rcol"><div class="colhead sk">SKIPPING</div><div class="ricon" id="ruang-i1"><svg viewBox="0 0 100 100"><rect x="18" y="18" width="64" height="64" rx="6" fill="none" stroke="#000" stroke-width="5"/><path d="M18 50 H82 M50 18 V82" stroke="#000" stroke-width="2" opacity=".25"/><circle cx="50" cy="40" r="6" fill="#000"/><path d="M50 47 V64 M42 54 L58 54" stroke="#000" stroke-width="5" stroke-linecap="round"/><path d="M38 58 Q50 86 62 58" stroke="#E8252B" stroke-width="3" fill="none"/></svg></div>
+        <div class="rlabel lbl">RUANG</div><div class="rchips"><div id="ruang-a1" class="mchip lbl l"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i>KECIL, ±2M × 2M</div></div>
+        <div class="rlabel lbl">PERALATAN</div><div class="rchips"><div id="ruang-c1" class="mchip lbl l"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i>SEUTAS TALI, MUAT BEG</div></div></div>
+      <div class="rcol"><div class="colhead bw">BRISKWALK</div><div class="ricon" id="ruang-i2"><svg viewBox="0 0 100 100"><path d="M36 92 L46 8 M64 92 L54 8" stroke="#000" stroke-width="5" stroke-linecap="round"/><path d="M50 84 V72 M50 60 V50 M50 40 V32 M50 24 V18" stroke="#E8252B" stroke-width="4" stroke-linecap="round"/></svg></div>
+        <div class="rlabel lbl">RUANG</div><div class="rchips"><div id="ruang-b1" class="mchip lbl w"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i>LALUAN PANJANG / TREK</div></div>
+        <div class="rlabel lbl">PERALATAN</div><div class="rchips"><div id="ruang-d1" class="mchip lbl w"><i><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/></svg></i>KASUT SESUAI</div></div></div>
+    </div>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#ruang-tag", { opacity: 0, scale: 1.25 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 0.05);
+    tl.fromTo("#ruang-p", { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.45, ease: "expo.out" }, 0.2);
+    tl.fromTo("#ruang-a1", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 0.9);
+    tl.fromTo("#ruang-b1", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 1.3);
+    tl.fromTo("#ruang-c1", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 2.0);
+    tl.fromTo("#ruang-d1", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 2.4);
+    tl.to(["#ruang-tag","#ruang-p"], { opacity: 0, filter: "blur(8px)", duration: 0.2, ease: "power2.in" }, 5.28);
+    window.__timelines["ruang"] = tl;
+  </script>
+</template>
