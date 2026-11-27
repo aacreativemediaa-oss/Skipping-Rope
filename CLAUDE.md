@@ -49,7 +49,7 @@ Font Anton untuk tajuk/caption, Montserrat untuk label.
 - Susunan pill: semua pill dalam **satu baris** dahulu (di tengah). Baris kedua hanya bila tak muat dalam lebar yang ada.
 
 - Caption huruf besar, stroke hitam. Perkataan aktif kuning, kata kunci hijau neon, 2–3 perkataan setiap kali, tengah bawah.
-- Kedudukan caption: bahagian atas kotak caption pada **y = 1300px** (dahulu 1140px). Pastikan panel / grafik lain tak turun melepasi ~y 1280 supaya tak bertindih.
+- Kedudukan caption: paling rendah yang masih dalam zon selamat TikTok / Reels / Shorts — **bahagian bawah caption pada y = 1248px** (kotak caption tinggi 70px, jadi bahagian atas pada **y = 1178px**). Jangan letak lebih rendah. Pastikan panel / grafik lain tak turun melepasi ~y 1160 supaya tak bertindih.
 - Tak bertindih: kalau grafik dah tunjuk ayat yang sama, caption untuk klausa penuh itu disembunyikan.
 
 ## Sound effect
