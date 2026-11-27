@@ -37,7 +37,7 @@ Font Anton untuk tajuk/caption, Montserrat untuk label.
 ### Proporsi infografik (ikut contoh `Proportion.mp4`, Drive)
 | Elemen | Ukuran |
 |---|---|
-| Chip / pill (STEPS, MASA, KALORI, nama otot…) | pill tinggi **80px**, radius 40px, tulisan Montserrat ExtraBold **40px**, isi warna penuh (lime #C8FF1E / kuning #FFD60A / pink #FF3C8E), ikon ✓ bulat hitam 38px, jarak 20px. Ini menggantikan chip 19px dalam jadual di atas. |
+| Chip / pill (STEPS, MASA, KALORI, nama otot…) | pill tinggi **60px**, radius 30px, tulisan Montserrat ExtraBold **30px**, isi warna penuh (lime #C8FF1E / kuning #FFD60A / pink #FF3C8E), ikon ✓ bulat hitam 28px, jarak 16px. Ini menggantikan chip 19px dalam jadual di atas. |
 | Kotak jadual / panel infografik (panel hitam) | lebar **900px** (di tengah, x 90 → 990), tinggi ~760px (y 310 → 1070), radius **34px**, garis hitam **6px** |
 | Setiap baris jadual | tinggi **104px** |
 | Label berat (50KG…100KG) | **Anton 50px** |
@@ -49,6 +49,7 @@ Font Anton untuk tajuk/caption, Montserrat untuk label.
 - Susunan pill: semua pill dalam **satu baris** dahulu (di tengah). Baris kedua hanya bila tak muat dalam lebar yang ada.
 
 - Caption huruf besar, stroke hitam. Perkataan aktif kuning, kata kunci hijau neon, 2–3 perkataan setiap kali, tengah bawah.
+- Kedudukan caption: bahagian atas kotak caption pada **y = 1300px** (dahulu 1140px). Pastikan panel / grafik lain tak turun melepasi ~y 1280 supaya tak bertindih.
 - Tak bertindih: kalau grafik dah tunjuk ayat yang sama, caption untuk klausa penuh itu disembunyikan.
 
 ## Sound effect
