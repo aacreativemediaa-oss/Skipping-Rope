@@ -1,0 +1,48 @@
+<template>
+  <style>
+    @font-face { font-family: "Anton"; src: url("assets/fonts/Anton-Regular.ttf") format("truetype"); font-weight: 400; }
+    @font-face { font-family: "MontserratV"; src: url("assets/fonts/Montserrat.ttf") format("truetype"); font-weight: 100 900; }
+    #root { position: absolute; inset: 0; overflow: hidden; }
+    .hl { font-family: "Anton", sans-serif; font-size: 85px; line-height: 1.04; color: #fff; text-transform: uppercase; text-align: center;
+          -webkit-text-stroke: 7px #000; paint-order: stroke fill; text-shadow: 0 6px 18px rgba(0,0,0,.55); letter-spacing: 1px; }
+    .sub { font-family: "Anton", sans-serif; font-size: 47px; line-height: 1.15; color: #fff; text-transform: uppercase; text-align: center;
+           -webkit-text-stroke: 5px #000; paint-order: stroke fill; text-shadow: 0 4px 12px rgba(0,0,0,.5); letter-spacing: 1px; }
+    .y { color: #FFE600; } .g { color: #39FF14; }
+    .lbl { font-family: "MontserratV", sans-serif; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; }
+    .topshade { display:none; }
+    .line { position: absolute; left: 0; width: 1080px; }
+    .left { left: 130px; width: 520px; text-align: left; }
+
+    .chiprow { position:absolute; left:90px; width:900px; display:flex; flex-wrap:wrap; justify-content:center; gap:16px; }
+    .pill { height:60px; padding: 0 22px 0 14px; border-radius:30px; background:#C8FF1E; border:none;
+            display:flex; align-items:center; gap:9px; font-size:30px; color:#000; white-space:nowrap; box-shadow: 0 6px 18px rgba(0,0,0,.45); }
+    .pill.yb { background:#FFD60A; } .pill.pk { background:#FF3C8E; color:#fff; }
+    .pill i { width:28px; height:28px; border-radius:50%; background:#000; display:flex; align-items:center; justify-content:center; flex:none; }
+    .pill i svg { width:16px; height:16px; }
+    .sw { height:60px; padding:0 26px 0 14px; border-radius:30px; display:flex; align-items:center; gap:12px; font-size:30px; color:#000; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,.45); }
+    .sw b { width:34px; height:34px; border-radius:50%; border:3px solid #000; display:block; }
+    #cta-btn { position:absolute; left:0; right:0; margin:0 auto; top:1030px; width:max-content; padding:6px 30px 10px; border-radius:40px; background:#C8FF1E;
+               font-family:"Anton",sans-serif; font-size:47px; line-height:1.15; color:#000; box-shadow:0 8px 24px rgba(0,0,0,.5); }
+    #cta-arrow { position:absolute; left:0; right:0; margin:0 auto; top:1112px; width:60px; height:60px; }
+  </style>
+  <div id="root" data-composition-id="cta" data-width="1080" data-height="1920">
+    <div id="cta-a" class="sub line" style="top:300px">TAHUN 2027</div>
+    <div id="cta-b" class="hl line" style="top:356px">NAK START <span class="y">SKIPPING?</span></div>
+    <div class="chiprow" style="top:946px"><div id="cta-pink" class="sw lbl"><b style="background:#F7A8C8"></b>PINK</div><div id="cta-ungu" class="sw lbl"><b style="background:#B9A3E8"></b>UNGU</div></div>
+    <div id="cta-btn">PILIH WARNA DEKAT LINK BAWAH</div>
+    <svg id="cta-arrow" viewBox="0 0 24 24"><path d="M12 3v16M5 13l7 7 7-7" stroke="#000" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M12 3v16M5 13l7 7 7-7" stroke="#C8FF1E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+  </div>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.fromTo("#cta-a", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.2, ease: "power4.out" }, 0.05);
+    tl.fromTo("#cta-b", { opacity: 0, scale: 1.3 }, { opacity: 1, scale: 1, duration: 0.3, ease: "expo.out" }, 0.12);
+    tl.fromTo("#cta-pink", { opacity: 0, scale: 0.6 }, { opacity: 1, scale: 1.12, duration: 0.3, ease: "back.out(1.7)" }, 0.6);
+    tl.fromTo("#cta-ungu", { opacity: 0, scale: 0.6 }, { opacity: 0.55, scale: 1, duration: 0.3, ease: "back.out(1.7)" }, 0.75);
+    tl.to("#cta-pink", { scale: 1, opacity: 0.55, duration: 0.2 }, 2.8);
+    tl.to("#cta-ungu", { scale: 1.12, opacity: 1, duration: 0.2 }, 2.8);
+    tl.fromTo("#cta-btn", { opacity: 0, scale: 0.5 }, { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(1.8)" }, 1.3);
+    tl.fromTo("#cta-arrow", { opacity: 0 }, { opacity: 1, duration: 0.2 }, 1.6);
+    tl.fromTo("#cta-arrow", { y: -10 }, { y: 10, duration: 0.35, ease: "sine.inOut", yoyo: true, repeat: 8 }, 1.6);
+    window.__timelines["cta"] = tl;
+  </script>
+</template>
