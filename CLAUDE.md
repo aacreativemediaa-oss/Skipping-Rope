@@ -24,6 +24,8 @@ Rujukan projek terdahulu: `hyperframes/project/` (10 Minit Skipping) dan `hyperf
 - Jangan gelapkan seluruh frame (contoh: lapisan hitam separa lut sinar penuh skrin pada CTA). Untuk bacaan teks, guna panel / pelekat / stroke pada teks itu sendiri, atau bayang setempat yang kecil di belakang teks sahaja.
 
 ## Teks & caption
+Contoh rujukan yang diluluskan: `output/contoh_caption_baru.jpg` (headline 85px, panel 900px, pill 60px/30px sebaris, caption y 1178 → 1248).
+
 Font Anton untuk tajuk/caption, Montserrat untuk label.
 
 | Tulisan | Saiz (sekarang) | Sebelum |
